@@ -1,0 +1,60 @@
+ext {
+    // Android
+    androidBuildToolsVersion = "7.2.1"
+
+    minVersion = 23
+    targetVersion = 32
+    compileVersion = 32
+
+    // kotlin
+    kotlinVersion = "1.6.10"
+
+    // androidx
+    appcompatVersion = "1.5.0"
+    coreKtxVersion = "1.8.0"
+    activityKtxVersion = "1.5.1"
+    fragmentKtxVersion = "1.5.2"
+    lifecycleVersion = "2.6.0-alpha01"
+    constraintLayoutVersion = "2.1.4"
+    recyclerViewVersion = "1.2.1"
+    viewPagerVersion = "1.0.0"
+
+    // MLKit
+    barcodeSacnnerVersion = "17.0.2"
+
+    // Camera
+    cameraVersion = "1.1.0-beta02"
+
+    //google firebase
+    gmsVersion = "4.3.10"
+    firebaseVersion = "29.1.0"
+    crashlyticsVersion= "2.8.1"
+
+    // di
+    hiltVersion = "2.39.1"
+
+    // kotlin & coroutine
+    kotlinVersion = "1.6.10"
+    coroutineVersion = "1.5.2"
+
+    // material
+    materialVersion = "1.6.1"
+
+    // network
+    retrofitVersion = "2.9.0"
+
+    // OkHttp
+    okhttpInterceptorVerison = "4.9.3"
+
+    // serialization
+    moshiVersion = "1.13.0"
+
+    // image
+    glideVersion = "4.12.0"
+
+    // DataSource
+    dataSourceVersion = "1.0.0"
+
+    // Navigation
+    navVersion = "2.4.2"
+}
