@@ -33,7 +33,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         config.licenseKey = KEY
         binding.architectView.onCreate(config)
 
-
         binding.architectView.let {
             locationProvider = LocationProvider(this, object : LocationListener {
                 override fun onLocationChanged(location: Location) {
@@ -48,10 +47,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                         it.setLocation(
                             location.latitude,
                             location.longitude,
-                            (if (location.hasAccuracy()) location.accuracy else 1000) as Double
+                            (if (location.hasAccuracy()) location.accuracy.toDouble() else 1000.0)
                         )
                     }
                 }
+
 
                 override fun onStatusChanged(s: String, i: Int, bundle: Bundle) {}
                 override fun onProviderEnabled(s: String) {}
@@ -76,14 +76,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         super.onResume()
         binding.architectView.onResume()
         // start location updates
-        locationProvider!!.onResume()
+        locationProvider?.onResume()
     }
 
     override fun onPause() {
         super.onPause()
         binding.architectView.onPause()
         // stop location updates
-        locationProvider!!.onPause()
+        locationProvider?.onPause()
     }
 
     override fun onDestroy() {
@@ -133,9 +133,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private fun checkRunTimePermission() {
         //런타임 퍼미션 처리
         // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
-        val hasFineLocationPermission = ContextCompat.checkSelfPermission(
-            this, Manifest.permission.ACCESS_FINE_LOCATION
-        )
+        val hasFineLocationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED) {
             // 2. 이미 퍼미션을 가지고 있다면
