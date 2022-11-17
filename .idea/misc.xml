@@ -26,6 +26,8 @@
         <entry key="app/src/main/res/layout/fragment_review_write.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/item_checkin.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_review.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_picture.xml" value="0.14488348530901723" />
+        <entry key="app/src/main/res/layout/layout_place.xml" value="0.438187255859375" />
       </map>
     </option>
   </component>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<data>
 
@@ -15,6 +13,74 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/border_bottom"
+				android:orientation="vertical"
+				android:padding="20dp">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					style="@style/AirDropSelectTitle"
+					android:text="@string/airdrop_filter_a" />
+
+				<com.looktabinc.customview.PlaceSelectView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+			</androidx.appcompat.widget.LinearLayoutCompat>
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="8dp"
+			android:background="@color/black" />
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/border_bottom"
+				android:padding="20dp">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					style="@style/AirDropSelectTitle"
+					android:text="@string/airdrop_filter_b" />
+
+				<com.looktabinc.customview.PictureSelectView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+			</androidx.appcompat.widget.LinearLayoutCompat>
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="8dp"
+			android:background="@color/black" />
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/border_bottom"
+				android:padding="20dp">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					style="@style/AirDropSelectTitle"
+					android:text="@string/airdrop_filter_c" />
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
+		</androidx.appcompat.widget.LinearLayoutCompat>
 	</androidx.core.widget.NestedScrollView>
 
 </layout>
