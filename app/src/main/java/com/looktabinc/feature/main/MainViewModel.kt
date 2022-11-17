@@ -33,6 +33,9 @@ class MainViewModel (private val reviewDataSource: KaKaoRepository) : BaseViewMo
     fun setMainFlow(state: MainFlow) {
         _mainFlow.value = state
     }
+    fun setViewFlow(state: ViewFlow) {
+        _flow.value = state
+    }
 
 
 }

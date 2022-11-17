@@ -10,30 +10,19 @@
 	<color name="primary500">#7B62FF</color>
 	<color name="primary700">#6C56DD</color>
 
-	<color name="green50">#E2F5EB</color>
-	<color name="green700">#00A175</color>
-	<color name="green_check">#39C6AC</color>
-
-	<color name="yellow">#FFE03E</color>
-	<color name="red">#D64D5D</color>
-
-	<color name="login_kakao_yellow">#FEE500</color>
-	<color name="login_kakao_black">#191919</color>
-	<color name="login_green">#03C75A</color>
+	<color name="secondary">#DDFF91</color>
 
 	<color name="white">#FFFFFF</color>
 	<color name="background">#FAFAFB</color>
-	<color name="gray50">#F5F6F8</color>
-	<color name="gray100">#F1F3F5</color>
-	<color name="gray200">#E9ECEF</color>
-	<color name="gray300">#DEE2E6</color>
-	<color name="gray400">#CED4DA</color>
-	<color name="gray500">#ADB5BD</color>
-	<color name="gray600">#868E96</color>
-	<color name="gray700">#434850</color>
-	<color name="gray800">#212529</color>
+	<color name="gray100">#CCCCCC</color>
+	<color name="gray200">#AAAAAA</color>
+	<color name="gray500">#777777</color>
+	<color name="gray600">#444</color>
+	<color name="gray700">#333</color>
+	<color name="gray800">#272727</color>
+	<color name="gray850">#171717</color>
+	<color name="gray900">#0F0F0F</color>
 	<color name="black">#FF000000</color>
-	<color name="black70">#B3000000</color>
 </resources>
 
 

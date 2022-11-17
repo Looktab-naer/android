@@ -1,3 +1,8 @@
 <resources>
 	<string name="app_name">Looktab</string>
+	<string name="ar">AR</string>
+	<string name="my_check_in">MY CHECK IN</string>
+	<string name="my_page">MY PAGE</string>
+	<string name="my_review_history">MY REVIEW HISTORY</string>
+	<string name="airdrop_alarm_setting">AIRDROP ALARM SETTING</string>
 </resources>
