@@ -9,14 +9,48 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
+		<import type="com.looktabinc.feature.main.MainViewModel.MainFlow"/>
 	</data>
-
 
 	<androidx.appcompat.widget.LinearLayoutCompat
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@color/gray50"
-		android:fitsSystemWindows="true"
+		android:layout_gravity="bottom"
+		android:background="@color/gray900"
+		android:clickable="true"
+		android:focusable="true"
 		android:orientation="vertical">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="60dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/Title"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				android:text="@string/my_review_history" />
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				android:layout_marginStart="12dp"
+				android:src="@drawable/ic_back"
+				android:onClick="@{() -> viewModel.setMainFlow(MainFlow.BACK)}"
+				android:text="@string/my_review_history" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rv_review"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			tools:itemCount="10"
+			tools:listitem="@layout/item_review"/>
 	</androidx.appcompat.widget.LinearLayoutCompat>
+
 </layout>

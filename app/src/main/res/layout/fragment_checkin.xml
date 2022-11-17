@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
@@ -9,12 +8,24 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
+		<import type="com.looktabinc.feature.main.MainViewModel.MainFlow" />
 	</data>
 
-	<androidx.core.widget.NestedScrollView
+	<androidx.appcompat.widget.LinearLayoutCompat
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:layout_gravity="bottom"
+		android:background="@color/gray900"
+		android:clickable="true"
+		android:focusable="true"
+		android:orientation="vertical">
 
-	</androidx.core.widget.NestedScrollView>
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rv_checkin"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			tools:itemCount="10"
+			tools:listitem="@layout/item_checkin" />
+	</androidx.appcompat.widget.LinearLayoutCompat>
 
 </layout>

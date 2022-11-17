@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<data>
 
@@ -10,7 +11,7 @@
 	</data>
 
 
-	<FrameLayout
+	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:fitsSystemWindows="true"
@@ -19,14 +20,18 @@
 		<FrameLayout
 			android:id="@+id/fragment_container"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" />
+			android:layout_height="0dp"
+			app:layout_constraintBottom_toTopOf="@id/bttom_navi"
+			app:layout_constraintTop_toTopOf="parent" />
 
 		<androidx.appcompat.widget.LinearLayoutCompat
+			android:id="@+id/bttom_navi"
 			android:layout_width="match_parent"
 			android:layout_height="80dp"
 			android:layout_gravity="bottom"
 			android:background="@color/gray700"
-			android:weightSum="3">
+			android:weightSum="3"
+			app:layout_constraintBottom_toBottomOf="parent">
 
 			<androidx.appcompat.widget.AppCompatTextView
 				android:layout_width="match_parent"
@@ -70,5 +75,5 @@
 			android:id="@+id/out_fragment_container"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
-	</FrameLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
