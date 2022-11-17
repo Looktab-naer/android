@@ -42,12 +42,13 @@
 		android:usesCleartextTraffic="true"
 		tools:targetApi="31">
 		<activity
-			android:name=".WebActivity"
-			android:exported="true" >
-
-		</activity>
+			android:name=".MypageActivity"
+			android:exported="false" />
 		<activity
-			android:name=".MainActivity"
+			android:name=".WebActivity"
+			android:exported="true"></activity>
+		<activity
+			android:name=".feature.ar.ArActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

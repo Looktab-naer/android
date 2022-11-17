@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_mypage.xml" value="0.10876132930513595" />
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/activity_webview.xml" value="0.17248566961959355" />
+        <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17239583333333333" />
+        <entry key="app/src/main/res/layout/fragment_mycheckin.xml" value="0.17239583333333333" />
+        <entry key="app/src/main/res/layout/fragment_review_history.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/fragment_review_write.xml" value="0.17239583333333333" />
       </map>
     </option>
   </component>

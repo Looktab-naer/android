@@ -1,11 +1,11 @@
 /*
  * Created by Leo on 2021. 09. 26 ..
  */
-package com.hashshopinc.hashshop.base
+package com.looktabinc.base
 
 import android.content.Context
 import androidx.lifecycle.*
-import com.hashshopinc.hashshop.feature.webview.WebViewActivity
+import com.looktabinc.feature.webview.WebViewActivity
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 abstract class BaseViewModel : ViewModel() {

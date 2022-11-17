@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<data>
 
-		<variable
-			name="viewModel"
-			type="com.looktabinc.feature.main.MainViewModel" />
-
 	</data>
 
-
 	<FrameLayout
+		android:id="@+id/layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@color/gray50"
 		android:fitsSystemWindows="true"
 		android:orientation="vertical">
-		<FrameLayout
-			android:id="@+id/fragment_container"
+
+		<com.looktabinc.feature.webview.bridge.LooktabWebView
+			android:id="@+id/webview"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
 
 		<FrameLayout
-			android:id="@+id/out_fragment_container"
+			android:id="@+id/dialog_container"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
-
 	</FrameLayout>
 </layout>

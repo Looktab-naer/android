@@ -1,7 +1,7 @@
 /*
  * Created by Leo on 2021. 09. 26 ..
  */
-package com.hashshopinc.hashshop.base
+package com.looktabinc.base
 
 import android.content.Context
 import android.os.Bundle

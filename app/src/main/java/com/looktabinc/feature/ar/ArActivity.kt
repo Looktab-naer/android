@@ -1,4 +1,4 @@
-package com.looktabinc
+package com.looktabinc.feature.ar
 
 import android.Manifest
 import android.content.Intent
@@ -9,29 +9,28 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
+import com.looktabinc.LocationProvider
+import com.looktabinc.R
+import com.looktabinc.base.BaseActivity
 import com.looktabinc.databinding.ActivityMainBinding
 import com.wikitude.architect.ArchitectStartupConfiguration
 import java.io.IOException
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>(
-    R.layout.activity_main
-) {
+class ArActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_ar) {
 
-    val KEY =
-        "vxU3jqQ8yxZstSyEmy1f3aXkQwUBK91BHHuJWuCmgZRiXnDrXASxs0R43mSgj7Vvp0SxBtVvzTNPzSWBJuZhJKwhbYUyDa/PGvcmNOnqdQAZgsp1t2DfcPTzGUlZQ8SbfBrCHDN/Dfi4Sut803fPDalnakr2u4ofGabxLEa6dgdTYWx0ZWRfXwTNnZbzVu325DDh1NetPifL8b5IuSIWFd6ht45p9ss5tgQv5/A5ucH0LhimRrMX4XlF0fNrF3RX71GF5hALz8uQ/3No/ZO0tR9sn5UMN+wu463YAlp74hvvqfKJgdPKRliedMzFhKpne4AetUzYJeg7PlRM4zFtyjGRj0nxHOW+i8v+bK+tADSAP0tZX6FP1/Lx+sWOVa4w46BIC/Zo7qoEp9Xcuceqy36K8A6T2l25rWCGnwuQEPLdFZL7PtwCCkpO9MHiZJMMyspBFqDQA4JXYY3Bk9W1naMpFwVEnl23bXG9+X+bixEdwetxSZjmzIGh4D/hROANxqGNheo7hbAVxoQpUwrQM0Pkpf4TcglgtIdrPnaQjytkvFEru67UwxH3alR4sn53B6g2rPUkeHyZn+g8heOQlFOP7FhxJYU6EI9sMAi7jNfJL/kWBE1PANC3V+7WvXEvZzlY/HHGXXli5zSk+P9kH3c2hxygtQk+Ep/Jiat9Q2Qfrxh2mBv7oySJS/zcXAZbSOveanSIDPzva24d6RdbCYcHAEcOSL1uYNK5HE41k+XMZEocNWOT0IPP1wWb9pNKSbsm0S7C/1siU9fp/BFdyJjEIw1vPjy5HyjcAO4pvsj6kSlBmDdsjJWtDgY3nNaELMqroXI5ITmBwkJkbMRs6kzQtnvq4QVJgphtkGFhalc="
-//    val url = "https://looktabweb-cvxegt7fa-looktab.vercel.app/"
-//    val url = "file:///android_asset/www/index.html"
+    val KEY = "vxU3jqQ8yxZstSyEmy1f3aXkQwUBK91BHHuJWuCmgZRiXnDrXASxs0R43mSgj7Vvp0SxBtVvzTNPzSWBJuZhJKwhbYUyDa/PGvcmNOnqdQAZgsp1t2DfcPTzGUlZQ8SbfBrCHDN/Dfi4Sut803fPDalnakr2u4ofGabxLEa6dgdTYWx0ZWRfXwTNnZbzVu325DDh1NetPifL8b5IuSIWFd6ht45p9ss5tgQv5/A5ucH0LhimRrMX4XlF0fNrF3RX71GF5hALz8uQ/3No/ZO0tR9sn5UMN+wu463YAlp74hvvqfKJgdPKRliedMzFhKpne4AetUzYJeg7PlRM4zFtyjGRj0nxHOW+i8v+bK+tADSAP0tZX6FP1/Lx+sWOVa4w46BIC/Zo7qoEp9Xcuceqy36K8A6T2l25rWCGnwuQEPLdFZL7PtwCCkpO9MHiZJMMyspBFqDQA4JXYY3Bk9W1naMpFwVEnl23bXG9+X+bixEdwetxSZjmzIGh4D/hROANxqGNheo7hbAVxoQpUwrQM0Pkpf4TcglgtIdrPnaQjytkvFEru67UwxH3alR4sn53B6g2rPUkeHyZn+g8heOQlFOP7FhxJYU6EI9sMAi7jNfJL/kWBE1PANC3V+7WvXEvZzlY/HHGXXli5zSk+P9kH3c2hxygtQk+Ep/Jiat9Q2Qfrxh2mBv7oySJS/zcXAZbSOveanSIDPzva24d6RdbCYcHAEcOSL1uYNK5HE41k+XMZEocNWOT0IPP1wWb9pNKSbsm0S7C/1siU9fp/BFdyJjEIw1vPjy5HyjcAO4pvsj6kSlBmDdsjJWtDgY3nNaELMqroXI5ITmBwkJkbMRs6kzQtnvq4QVJgphtkGFhalc="
     val url = "https://stately-puffpuff-8836be.netlify.app/"
 
     private var locationProvider: LocationProvider? = null
     override fun initViews() {
         checkPermission()
+
         val config = ArchitectStartupConfiguration()
         config.licenseKey = KEY
         binding.architectView.onCreate(config)
@@ -197,14 +196,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                     )
                 ) {
                     Toast.makeText(
-                        this@MainActivity,
+                        this@ArActivity,
                         "퍼미션이 거부되었습니다. 앱을 다시 실행하여 퍼미션을 허용해주세요.",
                         Toast.LENGTH_LONG
                     ).show()
                     finish()
                 } else {
                     Toast.makeText(
-                        this@MainActivity,
+                        this@ArActivity,
                         "퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다. ",
                         Toast.LENGTH_LONG
                     ).show()
@@ -214,7 +213,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun showDialogForLocationServiceSetting() {
-        val builder = AlertDialog.Builder(this@MainActivity)
+        val builder = AlertDialog.Builder(this@ArActivity)
         builder.setTitle("위치 서비스 비활성화")
         builder.setMessage(
             "앱을 사용하기 위해서는 위치 서비스가 필요합니다.\n"
@@ -231,4 +230,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         builder.create().show()
     }
 
+    fun checkCameraPermission() {
+        val permissionCheck =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
+        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+            // 권한 없음
+            Log.e("CameraPermission", "권한 없음")
+            requestPermission()
+        } else {
+            // 권한이 이미 있음.
+            Log.e("CameraPermission", "권한 이미 있음")
+        }
+    }
+
+    private fun requestPermission() {
+        ActivityCompat.requestPermissions(
+            this as FragmentActivity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            1000
+        )
+    }
 }

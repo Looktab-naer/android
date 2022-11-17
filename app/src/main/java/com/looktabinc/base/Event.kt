@@ -1,4 +1,4 @@
-package com.hashshopinc.hashshop.base
+package com.looktabinc.base
 
 import androidx.lifecycle.Observer
 
