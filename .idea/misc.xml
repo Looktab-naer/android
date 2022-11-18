@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.144" />
         <entry key="app/src/main/res/drawable/bg_gradient_disable.xml" value="0.1425" />
         <entry key="app/src/main/res/drawable/border_bottom.xml" value="0.138" />
+        <entry key="app/src/main/res/drawable/box_default_line.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/box_edit_text.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/box_focused.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/btn_active.xml" value="0.1455" />
@@ -28,7 +29,7 @@
         <entry key="app/src/main/res/layout/activity_mypage.xml" value="0.10876132930513595" />
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/activity_webview.xml" value="0.17248566961959355" />
-        <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.29642857142857143" />
         <entry key="app/src/main/res/layout/fragment_checkin.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/fragment_mycheckin.xml" value="0.17239583333333333" />
@@ -38,7 +39,7 @@
         <entry key="app/src/main/res/layout/item_checkin.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_review.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_picture.xml" value="0.14488348530901723" />
-        <entry key="app/src/main/res/layout/layout_place.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/layout_place.xml" value="0.2" />
       </map>
     </option>
   </component>

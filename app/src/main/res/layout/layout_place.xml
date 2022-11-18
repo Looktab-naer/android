@@ -12,23 +12,25 @@
 			android:id="@+id/layout_item_cafe"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_cafe"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_cafe"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_cafe"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_cafe"
-				app:layout_constraintStart_toStartOf="@id/iv_item_cafe"
-				app:layout_constraintTop_toTopOf="@id/iv_item_cafe" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_cafe"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"
@@ -47,23 +49,25 @@
 			android:id="@+id/layout_item_restaurant"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_restaurant"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_restaurant"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_restaurant"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_restaurant"
-				app:layout_constraintStart_toStartOf="@id/iv_item_restaurant"
-				app:layout_constraintTop_toTopOf="@id/iv_item_restaurant" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_restaurant"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"
@@ -82,23 +86,25 @@
 			android:id="@+id/layout_item_bar"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_bar"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_bar"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_bar"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_bar"
-				app:layout_constraintStart_toStartOf="@id/iv_item_bar"
-				app:layout_constraintTop_toTopOf="@id/iv_item_bar" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_bar"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"
@@ -121,23 +127,25 @@
 			android:id="@+id/layout_item_shopping"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_shopping"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_shopping"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_shopping"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_shopping"
-				app:layout_constraintStart_toStartOf="@id/iv_item_shopping"
-				app:layout_constraintTop_toTopOf="@id/iv_item_shopping" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_shopping"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"
@@ -156,23 +164,25 @@
 			android:id="@+id/layout_item_cultural_life"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_cultural_life"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_cultural_life"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_cultural_life"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_cultural_life"
-				app:layout_constraintStart_toStartOf="@id/iv_item_cultural_life"
-				app:layout_constraintTop_toTopOf="@id/iv_item_cultural_life" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_cultural_life"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"
@@ -191,23 +201,25 @@
 			android:id="@+id/layout_item_fitness"
 			style="@style/JoinStyleLayout">
 
-			<ImageView
+			<androidx.appcompat.widget.LinearLayoutCompat
 				android:id="@+id/iv_item_fitness"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:adjustViewBounds="true"
-				android:src="@drawable/img_fitness"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="0dp"
 				android:layout_height="0dp"
 				android:adjustViewBounds="true"
 				android:background="@drawable/box_focused"
-				app:layout_constraintBottom_toBottomOf="@id/iv_item_fitness"
-				app:layout_constraintEnd_toEndOf="@id/iv_item_fitness"
-				app:layout_constraintStart_toStartOf="@id/iv_item_fitness"
-				app:layout_constraintTop_toTopOf="@id/iv_item_fitness" />
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:padding="3dp"
+
+					android:src="@drawable/img_fitness"
+					app:layout_constraintTop_toTopOf="parent" />
+
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 			<androidx.appcompat.widget.AppCompatImageView
 				style="@style/JoinStyleImgCheck"

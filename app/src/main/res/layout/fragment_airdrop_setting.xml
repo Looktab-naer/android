@@ -91,7 +91,6 @@
 			<androidx.appcompat.widget.LinearLayoutCompat
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/border_bottom"
 				android:orientation="vertical"
 				android:padding="20dp">
 
@@ -99,7 +98,139 @@
 					style="@style/AirDropSelectTitle"
 					android:text="@string/airdrop_filter_c" />
 
+				<androidx.appcompat.widget.LinearLayoutCompat
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:orientation="horizontal">
+
+					<TextView
+						style="@style/Typography.Regular"
+						android:layout_width="64dp"
+						android:layout_height="wrap_content"
+						android:text="Start"
+						android:textColor="@color/gray100"
+						android:textSize="16dp" />
+
+					<TextView
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:padding="16dp"
+						android:text="AM"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<EditText
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="20dp"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:inputType="number"
+						android:maxLength="2"
+						android:padding="16dp"
+						android:text="12"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="16dp"
+						android:text=":"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<EditText
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:inputType="number"
+						android:maxLength="2"
+						android:padding="16dp"
+						android:text="12"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
+
+				<androidx.appcompat.widget.LinearLayoutCompat
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:orientation="horizontal">
+
+					<TextView
+						style="@style/Typography.Regular"
+						android:layout_width="64dp"
+						android:layout_height="wrap_content"
+						android:text="End"
+						android:textColor="@color/gray100"
+						android:textSize="16dp" />
+
+					<TextView
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:padding="16dp"
+						android:text="PM"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<EditText
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="20dp"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:inputType="number"
+						android:maxLength="2"
+						android:padding="16dp"
+						android:text="12"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="16dp"
+						android:text=":"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+
+					<EditText
+						style="@style/Typography.SemiBold"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:background="@drawable/box_default_line"
+						android:gravity="center"
+						android:inputType="number"
+						android:maxLength="2"
+						android:padding="16dp"
+						android:text="12"
+						android:textColor="@color/white"
+						android:textSize="16dp" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
 			</androidx.appcompat.widget.LinearLayoutCompat>
+
+			<TextView
+				style="@style/Typography.Bold"
+				android:layout_width="match_parent"
+				android:layout_height="56dp"
+				android:layout_margin="20dp"
+				android:background="@drawable/btn_active"
+				android:gravity="center"
+				android:text="Save"
+				android:textColor="@color/black"
+				android:textSize="18dp" />
 		</androidx.appcompat.widget.LinearLayoutCompat>
 	</androidx.core.widget.NestedScrollView>
 
