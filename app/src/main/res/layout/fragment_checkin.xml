@@ -8,7 +8,6 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
-		<import type="com.looktabinc.feature.main.MainViewModel.MainFlow" />
 	</data>
 
 	<androidx.appcompat.widget.LinearLayoutCompat

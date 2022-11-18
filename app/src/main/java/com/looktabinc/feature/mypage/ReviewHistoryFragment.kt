@@ -1,4 +1,4 @@
-package com.looktabinc.feature.main
+package com.looktabinc.feature.mypage
 
 import android.content.Context
 import androidx.fragment.app.activityViewModels
@@ -6,6 +6,7 @@ import com.looktabinc.R
 import com.looktabinc.base.BaseFragment
 import com.looktabinc.base.eventObserve
 import com.looktabinc.databinding.FragmentReviewHistoryBinding
+import com.looktabinc.feature.main.MainViewModel
 
 class ReviewHistoryFragment : BaseFragment<FragmentReviewHistoryBinding>(
     R.layout.fragment_review_history

@@ -9,7 +9,6 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
-		<import type="com.looktabinc.feature.main.MainViewModel.MainFlow"/>
 	</data>
 
 	<androidx.appcompat.widget.LinearLayoutCompat
@@ -41,7 +40,7 @@
 				app:layout_constraintStart_toStartOf="parent"
 				android:layout_marginStart="12dp"
 				android:src="@drawable/ic_back"
-				android:onClick="@{() -> viewModel.setMainFlow(MainFlow.BACK)}"
+				android:onClick="@{() -> viewModel.onClickReviewHistoryFragmentEvent(viewModel.close)}"
 				android:text="@string/my_review_history" />
 		</androidx.constraintlayout.widget.ConstraintLayout>
 

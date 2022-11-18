@@ -1,14 +1,16 @@
-package com.looktabinc.feature.main
+package com.looktabinc.feature.checkin
 
 import android.content.Context
 import androidx.fragment.app.activityViewModels
 import com.looktabinc.R
 import com.looktabinc.base.BaseFragment
 import com.looktabinc.base.eventObserve
-import com.looktabinc.databinding.FragmentAirdropSettingBinding
+import com.looktabinc.databinding.FragmentReviewHistoryBinding
+import com.looktabinc.databinding.FragmentReviewWriteBinding
+import com.looktabinc.feature.main.MainViewModel
 
-class AirDropSettingFragment  : BaseFragment<FragmentAirdropSettingBinding>(
-    R.layout.fragment_airdrop_setting
+class ReviewWriteFragment : BaseFragment<FragmentReviewWriteBinding>(
+    R.layout.fragment_review_write
 ) {
 
     private val activityViewModel: MainViewModel by activityViewModels()
@@ -24,7 +26,7 @@ class AirDropSettingFragment  : BaseFragment<FragmentAirdropSettingBinding>(
     }
 
     override fun initObserves() {
-        activityViewModel.airDropEvent.eventObserve(viewLifecycleOwner) { text ->
+        activityViewModel.reviewWriteEvent.eventObserve(viewLifecycleOwner) { text ->
             when (text) {
                 activityViewModel.close -> {
                     closeFragment()
@@ -37,12 +39,14 @@ class AirDropSettingFragment  : BaseFragment<FragmentAirdropSettingBinding>(
     private fun closeFragment() {
         val fragmentManager = activity?.supportFragmentManager
         fragmentManager?.let {
-            it.beginTransaction().remove(this@AirDropSettingFragment).commit()
+            it.beginTransaction().remove(this@ReviewWriteFragment).commit()
             it.popBackStack()
         }
     }
 
     companion object {
-        fun newInstance() = AirDropSettingFragment()
+        fun newInstance() = ReviewWriteFragment()
     }
+
+
 }

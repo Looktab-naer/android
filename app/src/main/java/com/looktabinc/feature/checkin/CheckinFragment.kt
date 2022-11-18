@@ -1,14 +1,14 @@
-package com.looktabinc.feature.main
+package com.looktabinc.feature.checkin
 
 import android.content.Context
 import androidx.fragment.app.activityViewModels
 import com.looktabinc.R
 import com.looktabinc.base.BaseFragment
-import com.looktabinc.databinding.FragmentHomeBinding
-import com.looktabinc.databinding.FragmentMypageBinding
+import com.looktabinc.databinding.FragmentCheckinBinding
+import com.looktabinc.feature.main.MainViewModel
 
-class MyPageFragment : BaseFragment<FragmentMypageBinding>(
-    R.layout.fragment_mypage
+class CheckinFragment : BaseFragment<FragmentCheckinBinding>(
+    R.layout.fragment_checkin
 ) {
 
     private val activityViewModel: MainViewModel by activityViewModels()
@@ -27,7 +27,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     companion object {
-        fun newInstance() = MyPageFragment()
+        fun newInstance() = CheckinFragment()
     }
 
 

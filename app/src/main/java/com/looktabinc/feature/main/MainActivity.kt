@@ -8,6 +8,11 @@ import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
 import com.looktabinc.data.injection.KakaoInjection
 import com.looktabinc.databinding.ActivityMainBinding
+import com.looktabinc.feature.checkin.CheckinFragment
+import com.looktabinc.feature.main.MainViewModel.*
+import com.looktabinc.feature.mypage.AirDropSettingFragment
+import com.looktabinc.feature.mypage.MyPageFragment
+import com.looktabinc.feature.mypage.ReviewHistoryFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -28,25 +33,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         super.initViews()
         binding.viewModel = viewModel
         changeHome()
+
         viewModel.flow.observe(this, Observer {
             Log.e("flow", it.name)
             when (it) {
-                MainViewModel.ViewFlow.HOME -> {
+                ViewFlow.HOME -> {
                     changeHome()
                 }
-                MainViewModel.ViewFlow.MYCHECKIN -> {
+                ViewFlow.MYCHECKIN -> {
                     changeCheckin()
                 }
-                MainViewModel.ViewFlow.MYPAGE -> {
+                ViewFlow.MYPAGE -> {
                     changeMypage()
                 }
-                MainViewModel.ViewFlow.REVIEW_HISTORY -> {
+                ViewFlow.REVIEW_HISTORY -> {
                     changeOutContainerFragment(ReviewHistoryFragment.newInstance())
                 }
-                MainViewModel.ViewFlow.AIRDROP_SETTING -> {
+                ViewFlow.AIRDROP_SETTING -> {
                     changeOutContainerFragment(AirDropSettingFragment.newInstance())
                 }
-                MainViewModel.ViewFlow.REVIEW_WRITE -> {
+                ViewFlow.REVIEW_WRITE -> {
                     changeOutContainerFragment(AirDropSettingFragment.newInstance())
                 }
                 else -> {}
@@ -113,10 +119,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     override fun onBackPressed() {
-        if (supportFragmentManager.fragments.size <= 1) {
-            super.onBackPressed()
-        } else {
-            viewModel.setMainFlow(MainViewModel.MainFlow.BACK)
+        when (viewModel.flow.value) {
+            ViewFlow.HOME,
+            ViewFlow.MYCHECKIN,
+            ViewFlow.MYPAGE -> {
+                super.onBackPressed()
+            }
+
+            ViewFlow.REVIEW_HISTORY -> {
+                viewModel.onClickReviewHistoryFragmentEvent(viewModel.close)
+            }
+            ViewFlow.AIRDROP_SETTING -> {
+                viewModel.onClickAirDropFragmentEvent(viewModel.close)
+            }
+            ViewFlow.REVIEW_WRITE -> {
+                viewModel.onClickReviewWriteFragmentEvent(viewModel.close)
+            }
+            else -> {}
         }
+       
     }
 }

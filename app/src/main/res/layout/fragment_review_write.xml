@@ -9,7 +9,6 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
-		<import type="com.looktabinc.feature.main.MainViewModel.MainFlow" />
 	</data>
 
 	<androidx.appcompat.widget.LinearLayoutCompat
@@ -37,7 +36,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="12dp"
-				android:onClick="@{() -> viewModel.setMainFlow(MainFlow.BACK)}"
+				android:onClick="@{() -> viewModel.onClickReviewWriteFragmentEvent(viewModel.close)}"
 				android:src="@drawable/ic_back"
 				android:text="@string/my_review_history"
 				app:layout_constraintBottom_toBottomOf="parent"
