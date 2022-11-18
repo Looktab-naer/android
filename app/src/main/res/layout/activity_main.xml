@@ -46,10 +46,12 @@
 				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.MYCHECKIN)}"
 				android:textColor="@color/btn_text_colors" />
 
-			<FrameLayout
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.HOME)}"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
+				android:orientation="vertical"
 				android:layout_weight="1">
 
 				<ImageView
@@ -60,7 +62,7 @@
 					android:gravity="center"
 					android:padding="16dp"
 					android:src="@drawable/ic_home_ar_btn" />
-			</FrameLayout>
+			</androidx.appcompat.widget.LinearLayoutCompat>
 
 
 			<androidx.appcompat.widget.AppCompatTextView

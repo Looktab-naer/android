@@ -11,202 +11,206 @@
 
 	</data>
 
-	<androidx.appcompat.widget.LinearLayoutCompat
+	<androidx.core.widget.NestedScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_gravity="bottom"
-		android:background="@color/gray900"
-		android:clickable="true"
-		android:focusable="true"
-		android:orientation="vertical">
+		android:layout_height="wrap_content">
 
-		<androidx.constraintlayout.widget.ConstraintLayout
+		<androidx.appcompat.widget.LinearLayoutCompat
 			android:layout_width="match_parent"
-			android:layout_height="60dp">
-
-			<androidx.appcompat.widget.AppCompatTextView
-				style="@style/Title"
-				android:text="@string/create_a_review"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<ImageView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="12dp"
-				android:onClick="@{() -> viewModel.onClickReviewWriteFragmentEvent(viewModel.close)}"
-				android:src="@drawable/ic_back"
-				android:text="@string/my_review_history"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
-		</androidx.constraintlayout.widget.ConstraintLayout>
-
-		<androidx.appcompat.widget.LinearLayoutCompat style="@style/BasicLayout">
-
-			<TextView
-				android:id="@+id/tv_date"
-				style="@style/Typography.Regular"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="Date of visit 2021.02.03"
-				android:textColor="@color/gray500"
-				android:textSize="16dp"
-				tools:text="2021.02.03" />
+			android:layout_height="match_parent"
+			android:layout_gravity="bottom"
+			android:background="@color/gray900"
+			android:clickable="true"
+			android:focusable="true"
+			android:orientation="vertical">
 
 			<androidx.constraintlayout.widget.ConstraintLayout
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@drawable/border_bottom">
+				android:layout_height="60dp">
 
-				<ImageView
-					android:id="@+id/iv_store"
-					android:layout_width="60dp"
-					android:layout_height="60dp"
-					android:layout_marginTop="8dp"
-					android:background="@color/gray500"
+				<androidx.appcompat.widget.AppCompatTextView
+					style="@style/Title"
+					android:text="@string/create_a_review"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toTopOf="parent" />
 
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="12dp"
+					android:onClick="@{() -> viewModel.onClickReviewWriteFragmentEvent(viewModel.close)}"
+					android:src="@drawable/ic_back"
+					android:text="@string/my_review_history"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.appcompat.widget.LinearLayoutCompat style="@style/BasicLayout">
 
 				<TextView
-					android:id="@+id/tv_category"
+					android:id="@+id/tv_date"
 					style="@style/Typography.Regular"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="10dp"
-					android:text="category"
-					android:textColor="@color/gray100"
-					android:textSize="14dp"
-					app:layout_constraintBottom_toTopOf="@id/tv_store_name"
-					app:layout_constraintStart_toEndOf="@id/iv_store"
-					app:layout_constraintTop_toTopOf="@id/iv_store"
-					app:layout_constraintVertical_chainStyle="packed"
-					tools:text="CAFE" />
+					android:text="Date of visit 2021.02.03"
+					android:textColor="@color/gray500"
+					android:textSize="16dp"
+					tools:text="2021.02.03" />
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:id="@+id/iv_store"
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:layout_marginTop="8dp"
+						android:background="@color/gray500"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
 
 
-				<TextView
-					android:id="@+id/tv_store_name"
-					style="@style/Typography.ExtraBold"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="8dp"
-					android:text="iotle"
-					android:textColor="@color/white"
-					android:textSize="24dp"
-					app:layout_constraintBottom_toBottomOf="@id/iv_store"
-					app:layout_constraintStart_toStartOf="@id/tv_category"
-					app:layout_constraintTop_toBottomOf="@id/tv_category" />
+					<TextView
+						android:id="@+id/tv_category"
+						style="@style/Typography.Regular"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="10dp"
+						android:text="category"
+						android:textColor="@color/gray100"
+						android:textSize="14dp"
+						app:layout_constraintBottom_toTopOf="@id/tv_store_name"
+						app:layout_constraintStart_toEndOf="@id/iv_store"
+						app:layout_constraintTop_toTopOf="@id/iv_store"
+						app:layout_constraintVertical_chainStyle="packed"
+						tools:text="CAFE" />
 
-			</androidx.constraintlayout.widget.ConstraintLayout>
 
-		</androidx.appcompat.widget.LinearLayoutCompat>
+					<TextView
+						android:id="@+id/tv_store_name"
+						style="@style/Typography.ExtraBold"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:text="iotle"
+						android:textColor="@color/white"
+						android:textSize="24dp"
+						app:layout_constraintBottom_toBottomOf="@id/iv_store"
+						app:layout_constraintStart_toStartOf="@id/tv_category"
+						app:layout_constraintTop_toBottomOf="@id/tv_category" />
 
-		<View
-			android:layout_width="match_parent"
-			android:layout_height="8dp"
-			android:background="@color/black" />
+				</androidx.constraintlayout.widget.ConstraintLayout>
 
-		<androidx.appcompat.widget.LinearLayoutCompat style="@style/BasicLayout">
-
-			<TextView
-				style="@style/Typography.SemiBold"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/photo"
-				android:textColor="@color/gray100"
-				android:textSize="16dp"
-				tools:text="CAFE" />
-
-			<ImageView
-				android:layout_width="100dp"
-				android:layout_height="100dp"
-				android:layout_marginTop="12dp"
-				android:src="@drawable/ic_add_img" />
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="12dp"
-				android:orientation="horizontal">
-
-				<ImageView
-					android:layout_width="100dp"
-					android:layout_height="100dp"
-					android:background="@color/gray500" />
-
-				<ImageView
-					android:layout_width="100dp"
-					android:layout_height="100dp"
-					android:layout_marginStart="1dp"
-					android:background="@color/gray500" />
-
-				<ImageView
-					android:layout_width="100dp"
-					android:layout_height="100dp"
-					android:layout_marginStart="1dp"
-					android:background="@color/gray500" />
 			</androidx.appcompat.widget.LinearLayoutCompat>
 
-		</androidx.appcompat.widget.LinearLayoutCompat>
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="8dp"
+				android:background="@color/black" />
 
-		<View
-			android:layout_width="match_parent"
-			android:layout_height="8dp"
-			android:background="@color/black" />
+			<androidx.appcompat.widget.LinearLayoutCompat style="@style/BasicLayout">
 
-		<androidx.constraintlayout.widget.ConstraintLayout style="@style/BasicLayout">
+				<TextView
+					style="@style/Typography.SemiBold"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/photo"
+					android:textColor="@color/gray100"
+					android:textSize="16dp"
+					tools:text="CAFE" />
+
+				<ImageView
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:layout_marginTop="12dp"
+					android:src="@drawable/ic_add_img" />
+
+				<androidx.appcompat.widget.LinearLayoutCompat
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="12dp"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:layout_width="100dp"
+						android:layout_height="100dp"
+						android:background="@color/gray500" />
+
+					<ImageView
+						android:layout_width="100dp"
+						android:layout_height="100dp"
+						android:layout_marginStart="1dp"
+						android:background="@color/gray500" />
+
+					<ImageView
+						android:layout_width="100dp"
+						android:layout_height="100dp"
+						android:layout_marginStart="1dp"
+						android:background="@color/gray500" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
+
+			</androidx.appcompat.widget.LinearLayoutCompat>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="8dp"
+				android:background="@color/black" />
+
+			<androidx.constraintlayout.widget.ConstraintLayout style="@style/BasicLayout">
+
+				<TextView
+					android:id="@+id/tv_review_title"
+					style="@style/Typography.SemiBold"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/review"
+					android:textColor="@color/gray100"
+					android:textSize="16dp"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<ImageView
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:scaleType="fitXY"
+					android:src="@drawable/box_edit_text"
+					app:layout_constraintBottom_toBottomOf="@id/et_review"
+					app:layout_constraintEnd_toEndOf="@id/et_review"
+					app:layout_constraintStart_toStartOf="@id/et_review"
+					app:layout_constraintTop_toTopOf="@id/et_review" />
+
+				<EditText
+					android:id="@+id/et_review"
+					style="@style/Typography.Regular"
+					android:layout_width="0dp"
+					android:layout_height="180dp"
+					android:layout_margin="1dp"
+					android:layout_marginTop="12dp"
+					android:padding="16dp"
+					android:textColor="@color/white"
+					android:textSize="16dp"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
 
 			<TextView
-				android:id="@+id/tv_review_title"
-				style="@style/Typography.SemiBold"
+				style="@style/Typography.Bold"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/review"
-				android:textColor="@color/gray100"
-				android:textSize="16dp"
-				app:layout_constraintTop_toTopOf="parent" />
+				android:layout_height="56dp"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="20dp"
+				android:layout_marginBottom="20dp"
+				android:background="@drawable/btn_active"
+				android:gravity="center"
+				android:text="@string/save"
+				android:textColor="@color/black"
+				android:textSize="18dp" />
 
-			<ImageView
-				android:layout_width="0dp"
-				android:layout_height="0dp"
-				android:scaleType="fitXY"
-				android:src="@drawable/box_edit_text"
-				app:layout_constraintBottom_toBottomOf="@id/et_review"
-				app:layout_constraintEnd_toEndOf="@id/et_review"
-				app:layout_constraintStart_toStartOf="@id/et_review"
-				app:layout_constraintTop_toTopOf="@id/et_review" />
-
-			<EditText
-				android:id="@+id/et_review"
-				style="@style/Typography.Regular"
-				android:layout_width="0dp"
-				android:layout_height="180dp"
-				android:layout_margin="1dp"
-				android:layout_marginTop="12dp"
-				android:padding="16dp"
-				android:textColor="@color/white"
-				android:textSize="16dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/tv_review_title" />
-		</androidx.constraintlayout.widget.ConstraintLayout>
-
-		<TextView
-			style="@style/Typography.Bold"
-			android:layout_width="match_parent"
-			android:layout_height="56dp"
-			android:layout_marginStart="20dp"
-			android:layout_marginEnd="20dp"
-			android:layout_marginBottom="20dp"
-			android:background="@drawable/btn_active"
-			android:gravity="center"
-			android:text="@string/save"
-			android:textColor="@color/black"
-			android:textSize="18dp" />
-
-	</androidx.appcompat.widget.LinearLayoutCompat>
+		</androidx.appcompat.widget.LinearLayoutCompat>
+	</androidx.core.widget.NestedScrollView>
 
 </layout>
