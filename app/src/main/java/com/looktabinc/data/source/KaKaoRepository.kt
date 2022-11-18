@@ -6,8 +6,8 @@ import io.reactivex.rxjava3.core.Single
 
 class KaKaoRepository(
     private val kakaoApi: KakaoApi
-) {
-    fun search(query: String, page: Int?, size: Int?): Single<KakaoLocalSearchResponse> {
+):KaKaoSource {
+    override fun search(query: String, page: Int?, size: Int?): Single<KakaoLocalSearchResponse> {
         return kakaoApi.getSearch(
             query, page, size
         )

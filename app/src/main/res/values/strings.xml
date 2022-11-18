@@ -17,4 +17,8 @@
 	<string name="airdrop_filter_a">What kind of place do you\nwant to be recommended?</string>
 	<string name="airdrop_filter_b">Which picture do you \nwant to see?</string>
 	<string name="airdrop_filter_c">Please select a time zone \nto receive the alarm!</string>
+	<string name="create_a_review">Create a review</string>
+	<string name="photo">PHOTO</string>
+	<string name="review">REVIEW</string>
+	<string name="save">Save</string>
 </resources>

@@ -34,11 +34,11 @@ class JavaScriptInterface(
     @JavascriptInterface
     fun call(funcName: String, _options: String?) {
         Log.d(TAG, "[Web Call] API full name: $funcName / options: $_options")
-        val options =
-            if (_options.isNullOrEmpty()) null else JsonParser.parseString(_options).asJsonObject
-        handler.post {
-            WebAPIController.requestAPI(context = webView.context, funcName, options)
-        }
+//        val options =
+//            if (_options.isNullOrEmpty()) null else JsonParser.parseString(_options).asJsonObject
+//        handler.post {
+//            WebAPIController.requestAPI(context = webView.context, funcName, options)
+//        }
     }
 
     override fun onDestroy() {}

@@ -35,22 +35,19 @@
 			<ImageView
 				android:layout_width="106dp"
 				android:layout_height="106dp"
-				android:background="@color/gray500"
-				imageUrl="@{item.image[0]}" />
+				android:background="@color/gray500" />
 
 			<ImageView
 				android:layout_width="106dp"
 				android:layout_height="106dp"
 				android:layout_marginStart="1dp"
-				android:background="@color/gray500"
-				imageUrl="@{item.image[0]}" />
+				android:background="@color/gray500"/>
 
 			<ImageView
 				android:layout_width="106dp"
 				android:layout_height="106dp"
 				android:layout_marginStart="1dp"
-				android:background="@color/gray500"
-				imageUrl="@{item.image[0]}" />
+				android:background="@color/gray500"/>
 		</androidx.appcompat.widget.LinearLayoutCompat>
 
 		<TextView

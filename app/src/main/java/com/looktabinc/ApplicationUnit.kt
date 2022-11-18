@@ -1,6 +1,7 @@
 package com.looktabinc
 
 import android.content.SharedPreferences
+import com.looktabinc.LooktabApplication.Companion.INSTANCE
 
 object ApplicationUnit {
     const val sharedPrefFile = "app_preferences"
@@ -15,25 +16,25 @@ object ApplicationUnit {
         get() = ""
 
     val accessToken: String?
-        get() = HashShopApplication.INSTANCE.sharedPreferences.getString(
+        get() = INSTANCE.sharedPreferences.getString(
             access_token, null
         )
 
     val refreshToken: String?
-        get() = HashShopApplication.INSTANCE.sharedPreferences.getString(
+        get() = INSTANCE.sharedPreferences.getString(
             refresh_token, null
         )
     val userNameValue: String?
-        get() = HashShopApplication.INSTANCE.sharedPreferences.getString(
+        get() = INSTANCE.sharedPreferences.getString(
             username_value, null
         )
 
     val channelTalkId: String?
-        get() = HashShopApplication.INSTANCE.sharedPreferences.getString(
+        get() = INSTANCE.sharedPreferences.getString(
             channel_talk_id, null
         )
     val isFirst: String?
-        get() = HashShopApplication.INSTANCE.sharedPreferences.getString(
+        get() = INSTANCE.sharedPreferences.getString(
             is_first, null
         )
 

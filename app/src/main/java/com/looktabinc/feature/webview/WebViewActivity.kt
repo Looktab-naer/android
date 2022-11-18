@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import com.looktabinc.feature.webview.bridge.WebAPIControllerInterface
 import com.looktabinc.*
 import com.looktabinc.ApplicationUnit.Empty
+import com.looktabinc.base.BaseActivity
 import com.looktabinc.databinding.ActivityWebviewBinding
 import com.looktabinc.feature.ar.ArActivity
 import com.looktabinc.feature.webview.bridge.WebAPIController

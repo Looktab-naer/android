@@ -1,6 +1,7 @@
 package com.looktabinc
 
 import android.webkit.WebSettings
+import com.looktabinc.base.BaseActivity
 import com.looktabinc.databinding.ActivityWebBinding
 import com.wikitude.architect.ArchitectStartupConfiguration
 

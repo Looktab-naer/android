@@ -1,6 +1,7 @@
 package com.looktabinc.data.dto
 
-import org.jetbrains.kotlin.com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerializedName
+
 
 data class KakaoLocalSearchResponse(
     @SerializedName("meta")

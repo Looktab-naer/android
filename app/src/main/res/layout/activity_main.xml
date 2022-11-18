@@ -8,6 +8,8 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
+		<import type="com.looktabinc.feature.main.MainViewModel.ViewFlow" />
+
 	</data>
 
 
@@ -41,6 +43,7 @@
 				android:drawableTop="@drawable/btn_checkin"
 				android:gravity="center"
 				android:text="@string/my_check_in"
+				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.MYCHECKIN)}"
 				android:textColor="@color/btn_text_colors" />
 
 			<FrameLayout
@@ -65,6 +68,7 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
 				android:layout_weight="1"
+				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.MYPAGE)}"
 				android:drawableTop="@drawable/btn_mypage"
 				android:gravity="center"
 				android:text="@string/my_page"

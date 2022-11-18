@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import com.looktabinc.base.BaseViewModel
 import com.looktabinc.base.Event
 import com.looktabinc.data.source.KaKaoRepository
+import com.looktabinc.data.source.KaKaoSource
 
-class MainViewModel (private val reviewDataSource: KaKaoRepository) : BaseViewModel() {
+class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel() {
 
     val close = "close"
 
