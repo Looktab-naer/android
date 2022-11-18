@@ -9,6 +9,7 @@ import com.looktabinc.base.BaseActivity
 import com.looktabinc.data.injection.KakaoInjection
 import com.looktabinc.databinding.ActivityMainBinding
 import com.looktabinc.feature.checkin.CheckinFragment
+import com.looktabinc.feature.checkin.ReviewWriteFragment
 import com.looktabinc.feature.main.MainViewModel.*
 import com.looktabinc.feature.mypage.AirDropSettingFragment
 import com.looktabinc.feature.mypage.MyPageFragment
@@ -53,7 +54,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                     changeOutContainerFragment(AirDropSettingFragment.newInstance())
                 }
                 ViewFlow.REVIEW_WRITE -> {
-                    changeOutContainerFragment(AirDropSettingFragment.newInstance())
+                    addOutFragment(ReviewWriteFragment.newInstance())
                 }
                 else -> {}
             }
@@ -118,6 +119,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }.commit()
     }
 
+    private fun addOutFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.out_fragment_container, fragment)
+        }.commit()
+    }
+
+
     override fun onBackPressed() {
         when (viewModel.flow.value) {
             ViewFlow.HOME,
@@ -137,6 +145,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             }
             else -> {}
         }
-       
+
     }
 }

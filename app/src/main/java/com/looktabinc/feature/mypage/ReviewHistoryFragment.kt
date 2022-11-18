@@ -1,6 +1,7 @@
 package com.looktabinc.feature.mypage
 
 import android.content.Context
+import android.util.Log
 import androidx.fragment.app.activityViewModels
 import com.looktabinc.R
 import com.looktabinc.base.BaseFragment
@@ -15,6 +16,17 @@ class ReviewHistoryFragment : BaseFragment<FragmentReviewHistoryBinding>(
     private val activityViewModel: MainViewModel by activityViewModels()
     lateinit var mContext: Context
 
+    private val historyAdapter by lazy {
+        HistoryAdapter().apply {
+            setOnItemClickListener(object : HistoryAdapter.OnItemClickListener {
+                override fun onItemClick(id: Int) {
+//                    activityViewModel.brandSeq = id
+//                    viewModel.onClickEvent(viewModel.brand)
+                }
+            })
+        }
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context;
@@ -22,9 +34,21 @@ class ReviewHistoryFragment : BaseFragment<FragmentReviewHistoryBinding>(
 
     override fun initViews() {
         binding.viewModel = activityViewModel
+        initRecyclerView()
+
+    }
+
+    private fun initRecyclerView() {
+        binding.rvReview.apply {
+            adapter = historyAdapter
+            activityViewModel.getHistory()
+        }
     }
 
     override fun initObserves() {
+        activityViewModel.historyList.observe(viewLifecycleOwner) { it ->
+            historyAdapter.submitList(it)
+        }
         activityViewModel.reviewHistoryEvent.eventObserve(viewLifecycleOwner) { text ->
             when (text) {
                 activityViewModel.close -> {

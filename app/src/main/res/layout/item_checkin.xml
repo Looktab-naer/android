@@ -75,6 +75,7 @@
 			tools:text="2021.02.03" />
 
 		<ImageView
+			android:id="@+id/btn_write"
 			style="@style/Typography.Regular"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
