@@ -1,6 +1,7 @@
 package com.looktabinc.feature.ar
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -19,6 +20,7 @@ import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
 import com.looktabinc.databinding.ActivityArBinding
 import com.looktabinc.databinding.ActivityMainBinding
+import com.looktabinc.feature.wallet.NearActivity
 import com.wikitude.architect.ArchitectStartupConfiguration
 import java.io.IOException
 
@@ -250,5 +252,15 @@ class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
             this as FragmentActivity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
             1000
         )
+    }
+    companion object {
+        fun intent(context: Context): Intent {
+            return Intent(context, ArActivity::class.java)
+        }
+
+        fun start(context: Context?, action: Intent.() -> Unit = {}) {
+            val intent = Intent(context, ArActivity::class.java).apply(action)
+            context?.startActivity(intent)
+        }
     }
 }

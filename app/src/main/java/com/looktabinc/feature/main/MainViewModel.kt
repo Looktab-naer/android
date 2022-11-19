@@ -21,7 +21,8 @@ class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel(
     private val _airDropEvent = MutableLiveData<Event<String>>()
     val airDropEvent: LiveData<Event<String>> get() = _airDropEvent
 
-    enum class ViewFlow { HOME,MYPAGE, MYCHECKIN, AIRDROP_SETTING,REVIEW_HISTORY,REVIEW_WRITE }
+    enum class ViewFlow { HOME,MYPAGE, MYCHECKIN, AIRDROP_SETTING,REVIEW_HISTORY,REVIEW_WRITE,
+        WALLET,AR}
     private val _flow = MutableLiveData<ViewFlow>()
     val flow: LiveData<ViewFlow> = _flow
 

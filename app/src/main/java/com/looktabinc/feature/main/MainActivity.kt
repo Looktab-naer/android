@@ -8,12 +8,14 @@ import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
 import com.looktabinc.data.injection.KakaoInjection
 import com.looktabinc.databinding.ActivityMainBinding
+import com.looktabinc.feature.ar.ArActivity
 import com.looktabinc.feature.checkin.CheckinFragment
 import com.looktabinc.feature.checkin.ReviewWriteFragment
 import com.looktabinc.feature.main.MainViewModel.*
 import com.looktabinc.feature.mypage.AirDropSettingFragment
 import com.looktabinc.feature.mypage.MyPageFragment
 import com.looktabinc.feature.mypage.ReviewHistoryFragment
+import com.looktabinc.feature.wallet.NearActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -37,14 +39,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         viewModel.flow.observe(this, Observer {
             Log.e("flow", it.name)
+            binding.btnHistory.isActivated=false
+            binding.btnMypage.isActivated=false
             when (it) {
                 ViewFlow.HOME -> {
                     changeHome()
                 }
                 ViewFlow.MYCHECKIN -> {
+                    binding.btnHistory.isActivated=true
                     changeCheckin()
                 }
                 ViewFlow.MYPAGE -> {
+                    binding.btnMypage.isActivated=true
                     changeMypage()
                 }
                 ViewFlow.REVIEW_HISTORY -> {
@@ -55,6 +61,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 }
                 ViewFlow.REVIEW_WRITE -> {
                     addOutFragment(ReviewWriteFragment.newInstance())
+                }
+                ViewFlow.WALLET->{
+                    NearActivity.start(this)
+                }
+                ViewFlow.AR->{
+                    ArActivity.start(this)
                 }
                 else -> {}
             }

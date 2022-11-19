@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools">
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<data>
 
@@ -9,12 +8,208 @@
 			name="viewModel"
 			type="com.looktabinc.feature.main.MainViewModel" />
 
+		<import type="com.looktabinc.feature.main.MainViewModel.ViewFlow" />
+
 	</data>
 
 	<androidx.core.widget.NestedScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:background="@color/gray900">
 
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/gray900"
+			android:orientation="vertical">
+
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="60dp">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					style="@style/Title"
+					android:layout_marginStart="20dp"
+					android:text="서울시 강남구 y"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<ImageView
+					android:id="@+id/btn_wallet"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="6dp"
+					android:onClick="@{() -> viewModel.setViewFlow(ViewFlow.WALLET)}"
+					android:padding="6dp"
+					android:src="@drawable/ic_wallet"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/btnAr"
+				android:layout_width="match_parent"
+				android:layout_height="200dp"
+				android:layout_margin="20dp"
+				android:clickable="true"
+				android:onClick="@{() -> viewModel.setViewFlow(ViewFlow.AR)}"
+				android:background="@color/gray700"
+				android:gravity="center"
+				android:text="GoAR"
+				android:textSize="34dp" />
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="20dp"
+				android:background="@color/gray800"
+				android:orientation="vertical"
+				android:padding="7dp">
+
+				<androidx.appcompat.widget.LinearLayoutCompat
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:weightSum="3">
+
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:onClick="@{() -> viewModel.setViewFlow(ViewFlow.AR)}"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
+
+				<androidx.appcompat.widget.LinearLayoutCompat
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:weightSum="3">
+
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:layout_width="88dp"
+						android:layout_height="66dp"
+						android:layout_margin="7dp"
+						android:layout_weight="1"
+						android:background="@color/card"
+						android:gravity="center"
+						android:text="@string/cafe"
+						android:textColor="@color/white"
+						android:textSize="12dp" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
+			</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/Title"
+				android:layout_marginStart="24dp"
+				android:text="지금 우리 동네는?" />
+
+
+			<GridLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="20dp"
+				android:background="@color/gray800"
+				android:orientation="vertical"
+				android:rowCount="1">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="142dp"
+					android:layout_height="202dp"
+					android:layout_margin="7dp"
+					android:background="@color/card"
+					android:gravity="center"
+					android:text="@string/cafe"
+					android:textColor="@color/white"
+					android:textSize="12dp" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="142dp"
+					android:layout_height="202dp"
+					android:layout_margin="7dp"
+					android:background="@color/card"
+					android:gravity="center"
+					android:text="@string/cafe"
+					android:textColor="@color/white"
+					android:textSize="12dp" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="142dp"
+					android:layout_height="202dp"
+					android:layout_margin="7dp"
+					android:background="@color/card"
+					android:gravity="center"
+					android:text="@string/cafe"
+					android:textColor="@color/white"
+					android:textSize="12dp" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="142dp"
+					android:layout_height="202dp"
+					android:layout_margin="7dp"
+					android:background="@color/card"
+					android:gravity="center"
+					android:text="@string/cafe"
+					android:textColor="@color/white"
+					android:textSize="12dp" />
+			</GridLayout>
+
+		</androidx.appcompat.widget.LinearLayoutCompat>
 	</androidx.core.widget.NestedScrollView>
 
 </layout>
