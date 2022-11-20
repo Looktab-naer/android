@@ -6,8 +6,10 @@ import android.graphics.drawable.ColorDrawable
 import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+
 
 object DesignUtil {
     @JvmStatic
@@ -32,6 +34,35 @@ object DesignUtil {
                 .circleCrop()
                 .into(this)
         }
+    }
+
+    @JvmStatic
+    @BindingAdapter("statusText")
+    fun TextView.setStatusText(int: Int?) {
+        when (int) {
+            1 -> {
+                text = "Relaxed"
+                setTextColor(this.resources.getColor(R.color.green))
+                val img = this.resources.getDrawable(R.drawable.ic_ellipse)
+                img.setBounds(0, 0, 8, 8)
+                setCompoundDrawables(img, null, null, null)
+            }
+            2 -> {
+                text = "Normal"
+                setTextColor(this.resources.getColor(R.color.blue))
+                val img = this.resources.getDrawable(R.drawable.ic_ellipse_blue)
+                img.setBounds(0, 0, 8, 8)
+                setCompoundDrawables(img, null, null, null)
+            }
+            3 -> {
+                text = "Crowded"
+                setTextColor(this.resources.getColor(R.color.red))
+                val img = this.resources.getDrawable(R.drawable.ic_ellipse_red)
+                img.setBounds(0, 0, 8, 8)
+                setCompoundDrawables(img, null, null, null)
+            }
+        }
+
     }
 
     @JvmStatic

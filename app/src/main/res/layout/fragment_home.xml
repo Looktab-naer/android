@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
 
@@ -307,55 +308,14 @@
 				android:gravity="start"
 				android:text="What about my neighborhood?" />
 
-			<GridLayout
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rv_neighborhood"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_margin="20dp"
-				android:background="@color/gray800"
-				android:orientation="vertical"
-				android:rowCount="1">
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="142dp"
-					android:layout_height="202dp"
-					android:layout_margin="7dp"
-					android:background="@color/card"
-					android:gravity="center"
-					android:text="@string/cafe"
-					android:textColor="@color/white"
-					android:textSize="12dp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="142dp"
-					android:layout_height="202dp"
-					android:layout_margin="7dp"
-					android:background="@color/card"
-					android:gravity="center"
-					android:text="@string/cafe"
-					android:textColor="@color/white"
-					android:textSize="12dp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="142dp"
-					android:layout_height="202dp"
-					android:layout_margin="7dp"
-					android:background="@color/card"
-					android:gravity="center"
-					android:text="@string/cafe"
-					android:textColor="@color/white"
-					android:textSize="12dp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="142dp"
-					android:layout_height="202dp"
-					android:layout_margin="7dp"
-					android:background="@color/card"
-					android:gravity="center"
-					android:text="@string/cafe"
-					android:textColor="@color/white"
-					android:textSize="12dp" />
-			</GridLayout>
-
+				android:layout_marginBottom="20dp"
+				tools:itemCount="10"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				tools:listitem="@layout/item_neighborhood"/>
 		</androidx.appcompat.widget.LinearLayoutCompat>
 	</androidx.core.widget.NestedScrollView>
 

@@ -9,9 +9,9 @@
 	<color name="teal_200">#FF03DAC5</color>
 	<color name="teal_700">#FF018786</color>
 
-	<color name="primary50">#F1EEFF</color>
-	<color name="primary500">#7B62FF</color>
-	<color name="primary700">#6C56DD</color>
+	<color name="green">#0FBB7D</color>
+	<color name="red">#FF4368</color>
+	<color name="blue">#3C96FF</color>
 
 	<color name="secondary">#DDFF91</color>
 

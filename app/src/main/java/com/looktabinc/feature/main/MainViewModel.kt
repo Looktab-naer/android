@@ -6,6 +6,7 @@ import com.looktabinc.base.BaseViewModel
 import com.looktabinc.base.Event
 import com.looktabinc.data.source.KaKaoSource
 import com.looktabinc.feature.model.Checkin
+import com.looktabinc.feature.model.Neighborhood
 import com.looktabinc.feature.model.ReviewHistory
 
 class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel() {
@@ -71,4 +72,20 @@ class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel(
         )
         _checkinList.value = listOf(a, a, a, a)
     }
+
+    private val _neighborhoodList = MutableLiveData<List<Neighborhood>>()
+    val neighborhoodList: LiveData<List<Neighborhood>> = _neighborhoodList
+    fun getNeighborhood() {
+        val a = Neighborhood(
+            id = 1,
+            image = "",
+            category = "CAFE",
+            storeName = "BABI BROUND",
+            status = 1,
+            distance = "500m",
+            date = "2022.02.03"
+        )
+        _neighborhoodList.value = listOf(a, a, a, a)
+    }
+
 }
