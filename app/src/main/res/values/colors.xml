@@ -13,6 +13,9 @@
 	<color name="red">#FF4368</color>
 	<color name="blue">#3C96FF</color>
 
+	<color name="start">#79E6EE</color>
+	<color name="end">#FFFC57</color>
+
 	<color name="secondary">#DDFF91</color>
 
 	<color name="white">#FFFFFF</color>
