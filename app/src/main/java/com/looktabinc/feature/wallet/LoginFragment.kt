@@ -11,10 +11,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     override fun initViews() {
 
         binding.loginBtnCv.setOnClickListener {
-            val email = binding.userEmailEt.text.toString()
-            if (email.isNotEmpty()) {
-                (activity as NearActivity).login(email)
-            }
+            (activity as NearActivity).login("yuchoco.testnet")
+//            val email = binding.userEmailEt.text.toString()
+//            if (email.isNotEmpty()) {
+//                (activity as NearActivity).login(email)
+//            }
         }
 
     }

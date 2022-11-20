@@ -5,8 +5,9 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
+		android:background="@color/gray900"
+		android:clickable="true"
 		android:layout_height="match_parent">
-
 
 		<androidx.cardview.widget.CardView
 			android:id="@+id/user_email_cv"
@@ -38,6 +39,7 @@
 					android:layout_gravity="center"
 					android:background="@android:color/transparent"
 					app:boxStrokeWidth="0dp"
+					android:orientation="vertical"
 					app:boxStrokeWidthFocused="0dp"
 					app:hintEnabled="true">
 
@@ -89,7 +91,6 @@
 					android:text="Login"
 					android:textColor="@color/white"
 					android:textSize="20sp" />
-
 			</LinearLayout>
 
 		</androidx.cardview.widget.CardView>

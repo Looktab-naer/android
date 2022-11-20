@@ -12,7 +12,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
 
 class NearActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_near) {
 
@@ -44,9 +43,24 @@ class NearActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_near) {
         }
     }
 
-    fun sendTransaction() {
+    fun sendViewAccount() {
         CoroutineScope(Dispatchers.IO).launch {
-            val transaction = nearMainService.sendTransaction("android-test-23.testnet", "1")
+            val balanceOfResponse = nearMainService.viewAccount()
+
+            withContext(Dispatchers.Main) {
+                transactionFragment.updateTxResponse0(balanceOfResponse)
+            }
+        }
+    }
+
+    fun sendTransaction() {
+        val contractName = "testm5.testnet"
+        val methodName = "nft_tokens_for_owner"
+        val balanceOfArgs = "{\"account_id\": \"yuchoco.testnet\"}"
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val transaction =
+                nearMainService.callViewFunction(contractName, methodName, balanceOfArgs)
             withContext(Dispatchers.Main) {
                 transactionFragment.updateTxResponse(transaction)
             }
@@ -64,10 +78,17 @@ class NearActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_near) {
 
     private fun callFunction(): StringBuilder {
         val sbResponse: StringBuilder = StringBuilder("")
-        var balanceOfArgs = "{ \"tokenOwner\": \"android-test-22.testnet\" }"
+        var balanceOfArgs = "{ \"tokenOwner\": \"yuchoco.testnet\" }"
         val contractName = "android-test-22.testnet"
         val balanceOfResponse =
             this.nearMainService.callViewFunction(contractName, "balanceOf", balanceOfArgs)
+
+//        val contractName = "testm5.testnet"
+//        val methodName = "nft_tokens_for_owner"
+//        val balanceOfArgs = "{\"account_id\": \"yuchoco.testnet\"}"
+//        val balanceOfResponse = this. nearMainService.callViewFunction(contractName,methodName,balanceOfArgs)
+
+
         if (balanceOfResponse.error == null) {
             val functionResult = balanceOfResponse.result.result!!.getDecodedAsciiValue()
             Log.i("NearService", "$contractName.balanceOf($balanceOfArgs): $functionResult")
@@ -82,78 +103,78 @@ class NearActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_near) {
             sbResponse.appendLine("$contractName.balanceOf($balanceOfArgs) ${balanceOfResponse.error?.message}")
         }
 
-        val totalSupplyArgs = "{}"
-        val totalSupplyResponse =
-            this.nearMainService.callViewFunction(contractName, "totalSupply", totalSupplyArgs)
-        if (totalSupplyResponse.error == null) {
-            val functionResult = totalSupplyResponse.result.result!!.getDecodedAsciiValue()
-            Log.i("NearService", "$contractName.totalSupply($totalSupplyArgs): $functionResult")
-            Log.i("NearService", "Logs: ${totalSupplyResponse.result.logs}")
-            sbResponse.appendLine("$contractName.totalSupply($totalSupplyArgs): $functionResult")
-            sbResponse.appendLine("Logs: ${totalSupplyResponse.result.logs}")
-        } else {
-            Log.e(
-                "NearService",
-                "$contractName.totalSupply($totalSupplyArgs) ${totalSupplyResponse.error?.message}"
-            )
-            sbResponse.appendLine("$contractName.totalSupply($totalSupplyArgs) ${totalSupplyResponse.error?.message}")
-        }
-
-        val transferFromArgs =
-            "{ \"from\": \"android-test-22.testnet\", \"to\": \"android-test-23.testnet\", \"tokens\": \"1\" }"
-        val transferFromResponse =
-            this.nearMainService.callViewFunction(contractName, "transferFrom", transferFromArgs)
-        if (transferFromResponse.error == null) {
-            val functionResult = totalSupplyResponse.result.result!!.getDecodedAsciiValue()
-            Log.i("NearService", "$contractName.transferFrom($transferFromArgs): $functionResult")
-            Log.i("NearService", "Logs: ${totalSupplyResponse.result.logs}")
-            sbResponse.appendLine("$contractName.transferFrom($transferFromArgs): $functionResult")
-            sbResponse.appendLine("Logs: ${totalSupplyResponse.result.logs}")
-        } else {
-            Log.e(
-                "NearService",
-                "$contractName.transferFrom($transferFromArgs) ${transferFromResponse.error?.message}"
-            )
-            sbResponse.appendLine("$contractName.transferFrom($transferFromArgs) ${transferFromResponse.error?.message}")
-        }
-
-        balanceOfArgs = "{ \"tokenOwner\": \"android-test-22.testnet\" }"
-        val callViewFunctionTransactionResponse = this.nearMainService.callViewFunctionTransaction(
-            contractName,
-            "balanceOf",
-            balanceOfArgs
-        )
-        if (callViewFunctionTransactionResponse.result.status.Failure == null) {
-            Log.i(
-                "NearService.",
-                "Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}"
-            )
-            sbResponse.appendLine("Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}")
-            callViewFunctionTransactionResponse.result.status.SuccessValue?.let {
-                val decodedValue = String(Base64.getDecoder().decode(it))
-                Log.i("NearService.", "SuccessValue: $decodedValue {$it}")
-                sbResponse.appendLine("SuccessValue: $decodedValue {$it}")
-            }
-        }
-
-        val invalidBalanceOfArgs = "{ tokenOwner: android-test-22.testnet }"
-        val errorResponse = this.nearMainService.callViewFunctionTransaction(
-            contractName,
-            "balanceOf",
-            invalidBalanceOfArgs
-        )
-        Log.i(
-            "NearService.",
-            "Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}"
-        )
-        sbResponse.appendLine("Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}")
-        if (errorResponse.result.status.Failure != null) {
-            Log.e(
-                "NearService.",
-                "Error: ${errorResponse.result.status.Failure!!.ActionError!!.kind.FunctionCallError!!.ExecutionError}"
-            )
-            sbResponse.appendLine("Error: ${errorResponse.result.status.Failure!!.ActionError!!.kind.FunctionCallError!!.ExecutionError}")
-        }
+//        val totalSupplyArgs = "{}"
+//        val totalSupplyResponse =
+//            this.nearMainService.callViewFunction(contractName, "totalSupply", totalSupplyArgs)
+//        if (totalSupplyResponse.error == null) {
+//            val functionResult = totalSupplyResponse.result.result!!.getDecodedAsciiValue()
+//            Log.i("NearService", "$contractName.totalSupply($totalSupplyArgs): $functionResult")
+//            Log.i("NearService", "Logs: ${totalSupplyResponse.result.logs}")
+//            sbResponse.appendLine("$contractName.totalSupply($totalSupplyArgs): $functionResult")
+//            sbResponse.appendLine("Logs: ${totalSupplyResponse.result.logs}")
+//        } else {
+//            Log.e(
+//                "NearService",
+//                "$contractName.totalSupply($totalSupplyArgs) ${totalSupplyResponse.error?.message}"
+//            )
+//            sbResponse.appendLine("$contractName.totalSupply($totalSupplyArgs) ${totalSupplyResponse.error?.message}")
+//        }
+//
+//        val transferFromArgs =
+//            "{ \"from\": \"android-test-22.testnet\", \"to\": \"android-test-23.testnet\", \"tokens\": \"1\" }"
+//        val transferFromResponse =
+//            this.nearMainService.callViewFunction(contractName, "transferFrom", transferFromArgs)
+//        if (transferFromResponse.error == null) {
+//            val functionResult = totalSupplyResponse.result.result!!.getDecodedAsciiValue()
+//            Log.i("NearService", "$contractName.transferFrom($transferFromArgs): $functionResult")
+//            Log.i("NearService", "Logs: ${totalSupplyResponse.result.logs}")
+//            sbResponse.appendLine("$contractName.transferFrom($transferFromArgs): $functionResult")
+//            sbResponse.appendLine("Logs: ${totalSupplyResponse.result.logs}")
+//        } else {
+//            Log.e(
+//                "NearService",
+//                "$contractName.transferFrom($transferFromArgs) ${transferFromResponse.error?.message}"
+//            )
+//            sbResponse.appendLine("$contractName.transferFrom($transferFromArgs) ${transferFromResponse.error?.message}")
+//        }
+//
+//        balanceOfArgs = "{ \"tokenOwner\": \"android-test-22.testnet\" }"
+//        val callViewFunctionTransactionResponse = this.nearMainService.callViewFunctionTransaction(
+//            contractName,
+//            "balanceOf",
+//            balanceOfArgs
+//        )
+//        if (callViewFunctionTransactionResponse.result.status.Failure == null) {
+//            Log.i(
+//                "NearService.",
+//                "Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}"
+//            )
+//            sbResponse.appendLine("Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}")
+//            callViewFunctionTransactionResponse.result.status.SuccessValue?.let {
+//                val decodedValue = String(Base64.getDecoder().decode(it))
+//                Log.i("NearService.", "SuccessValue: $decodedValue {$it}")
+//                sbResponse.appendLine("SuccessValue: $decodedValue {$it}")
+//            }
+//        }
+//
+//        val invalidBalanceOfArgs = "{ tokenOwner: android-test-22.testnet }"
+//        val errorResponse = this.nearMainService.callViewFunctionTransaction(
+//            contractName,
+//            "balanceOf",
+//            invalidBalanceOfArgs
+//        )
+//        Log.i(
+//            "NearService.",
+//            "Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}"
+//        )
+//        sbResponse.appendLine("Hash: ${callViewFunctionTransactionResponse.result.transaction.hash}")
+//        if (errorResponse.result.status.Failure != null) {
+//            Log.e(
+//                "NearService.",
+//                "Error: ${errorResponse.result.status.Failure!!.ActionError!!.kind.FunctionCallError!!.ExecutionError}"
+//            )
+//            sbResponse.appendLine("Error: ${errorResponse.result.status.Failure!!.ActionError!!.kind.FunctionCallError!!.ExecutionError}")
+//        }
         return sbResponse
     }
 
