@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/drawable/edittext_rounded_corner_rectangle.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/ic__menu.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/ic_add_img.xml" value="0.1455" />
+        <entry key="app/src/main/res/drawable/ic_ellipse.xml" value="0.123" />
         <entry key="app/src/main/res/drawable/ic_home_ar_btn.xml" value="0.1425" />
         <entry key="app/src/main/res/drawable/ic_home_circle_btn.xml" value="0.138" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.138" />
@@ -43,6 +44,8 @@
         <entry key="app/src/main/res/layout/fragment_transaction.xml" value="0.12234042553191489" />
         <entry key="app/src/main/res/layout/item_checkin.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_neighborhood.xml" value="0.1082427536231884" />
+        <entry key="app/src/main/res/layout/item_neighborhood_big.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/item_nft.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_review.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_picture.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/layout_place.xml" value="0.2" />

@@ -134,6 +134,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }.commit()
     }
 
+     fun changeOutAddNeighborhoodFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.out_fragment_container, NeighborhoodFragment.newInstance())
+        }.commit()
+    }
+
     private fun addOutFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             add(R.id.out_fragment_container, fragment)

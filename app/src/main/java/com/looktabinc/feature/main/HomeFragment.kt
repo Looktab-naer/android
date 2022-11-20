@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         NeighborhoodAdapter().apply {
             setOnItemClickListener(object : NeighborhoodAdapter.OnItemClickListener {
                 override fun onItemClick(id: Int) {
-//                    viewModel.categorySelectOne(name)
+                    (activity as MainActivity).changeOutAddNeighborhoodFragment()
                 }
             })
         }
