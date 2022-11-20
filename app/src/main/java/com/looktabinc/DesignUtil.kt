@@ -44,21 +44,21 @@ object DesignUtil {
                 text = "Relaxed"
                 setTextColor(this.resources.getColor(R.color.green))
                 val img = this.resources.getDrawable(R.drawable.ic_ellipse)
-                img.setBounds(0, 0, 8, 8)
+                img.setBounds(0, 0, 20, 20)
                 setCompoundDrawables(img, null, null, null)
             }
             2 -> {
                 text = "Normal"
                 setTextColor(this.resources.getColor(R.color.blue))
                 val img = this.resources.getDrawable(R.drawable.ic_ellipse_blue)
-                img.setBounds(0, 0, 8, 8)
+                img.setBounds(0, 0, 20, 20)
                 setCompoundDrawables(img, null, null, null)
             }
             3 -> {
                 text = "Crowded"
                 setTextColor(this.resources.getColor(R.color.red))
                 val img = this.resources.getDrawable(R.drawable.ic_ellipse_red)
-                img.setBounds(0, 0, 8, 8)
+                img.setBounds(0, 0, 20, 20)
                 setCompoundDrawables(img, null, null, null)
             }
         }

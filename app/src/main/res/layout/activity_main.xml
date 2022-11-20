@@ -41,32 +41,28 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
 				android:layout_weight="1"
+				style="@style/Typography.Regular"
 				android:drawableTop="@drawable/btn_checkin"
 				android:gravity="center"
 				android:text="@string/my_check_in"
 				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.MYCHECKIN)}"
 				android:textColor="@color/btn_text_colors" />
 
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.HOME)}"
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/btn_home"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
-				android:orientation="vertical"
-				android:layout_weight="1">
-
-				<ImageView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_gravity="center"
-					android:background="@drawable/ic_home_circle_btn"
-					android:gravity="center"
-					android:padding="16dp"
-					android:src="@drawable/ic_home_ar_btn" />
-			</androidx.appcompat.widget.LinearLayoutCompat>
-
-
+				style="@style/Typography.Regular"
+				android:layout_weight="1"
+				android:drawableTop="@drawable/btn_mypage"
+				android:gravity="center"
+				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.HOME)}"
+				android:text="@string/home"
+				android:textColor="@color/btn_text_colors" />
 			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/Typography.Regular"
 				android:id="@+id/btn_mypage"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

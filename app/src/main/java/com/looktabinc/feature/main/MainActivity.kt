@@ -36,13 +36,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         super.initViews()
         binding.viewModel = viewModel
         changeHome()
+        binding.btnHome.isActivated=true
 
         viewModel.flow.observe(this, Observer {
             Log.e("flow", it.name)
+            binding.btnHome.isActivated=false
             binding.btnHistory.isActivated=false
             binding.btnMypage.isActivated=false
             when (it) {
                 ViewFlow.HOME -> {
+                    binding.btnHome.isActivated=true
                     changeHome()
                 }
                 ViewFlow.MYCHECKIN -> {
@@ -128,6 +131,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private fun changeOutContainerFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.out_fragment_container, fragment)
+        }.commit()
+    }
+
+     fun changeOutAddNeighborhoodFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.out_fragment_container, NeighborhoodFragment.newInstance())
         }.commit()
     }
 
