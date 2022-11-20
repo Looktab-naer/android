@@ -9,154 +9,127 @@
 
 	</data>
 
-	<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:background="@color/gray900"
+		android:orientation="vertical">
 
+		<ImageView
+			android:id="@+id/iv_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="20dp"
+			android:src="@drawable/ic_back"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-		<androidx.constraintlayout.widget.ConstraintLayout
+		<androidx.core.widget.NestedScrollView
+			app:layout_constraintTop_toBottomOf="@id/iv_back"
+			app:layout_constraintBottom_toTopOf="@id/btn_burn"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:background="@color/gray900"
-			android:orientation="vertical">
+			android:layout_height="0dp">
 
-			<ImageView
-				android:id="@+id/iv_back"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="20dp"
-				android:src="@drawable/ic_back"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
 
-			<ImageView
-				android:id="@+id/iv_img"
-				imageUrl="@{viewModel.selectItem.metadata.media}"
+			<androidx.constraintlayout.widget.ConstraintLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_margin="20dp"
-				android:background="@color/gray500"
-				app:layout_constraintTop_toBottomOf="@id/iv_back" />
+				android:layout_height="wrap_content">
 
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_margin="20dp"
-				android:orientation="vertical"
-				app:layout_constraintTop_toBottomOf="@id/iv_img">
+				<ImageView
+					android:id="@+id/gridImg"
+					imageUrl="@{viewModel.selectItem.metadata.media}"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:layout_marginStart="100dp"
+					android:layout_marginTop="20dp"
+					android:layout_marginEnd="100dp"
+					android:adjustViewBounds="true"
+					android:background="@drawable/box_default_line"
+					android:scaleType="centerCrop"
+					app:layout_constraintDimensionRatio="1:1"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
 
 				<TextView
+					android:id="@+id/title"
 					style="@style/TitleBold"
+					android:layout_marginTop="20dp"
 					android:text="@{viewModel.selectItem.metadata.title}"
+					app:layout_constraintEnd_toEndOf="@id/gridImg"
+					app:layout_constraintStart_toStartOf="@id/gridImg"
+					app:layout_constraintTop_toBottomOf="@+id/gridImg"
 					tools:text="eqwweqweqe" />
-
-				<TextView
-					style="@style/Typography.Regular"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="8dp"
-					android:text="@{viewModel.selectItem.metadata.description}"
-					android:textColor="@color/white"
-					android:textSize="16dp"
-					tools:text="eqwweqweqe" />
-
-				<TextView
-					android:id="@+id/serviceReponseTv"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_margin="5dp"
-					android:textColor="@color/white" />
 
 				<View
+					android:id="@+id/view"
+					android:layout_width="match_parent"
+					android:layout_height="8dp"
+					android:layout_marginTop="32dp"
+					android:background="@color/black"
+					app:layout_constraintTop_toBottomOf="@id/title" />
+
+				<androidx.appcompat.widget.LinearLayoutCompat
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:layout_weight="1" />
+					android:layout_margin="20dp"
+					android:orientation="vertical"
+					app:layout_constraintTop_toBottomOf="@id/view">
 
-				<androidx.cardview.widget.CardView
-					android:id="@+id/btn_burn"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginTop="20dp"
-					android:layout_marginBottom="20dp"
-					android:clickable="true"
-					android:focusable="true"
-					android:foreground="?android:attr/selectableItemBackground"
-					app:cardBackgroundColor="@color/red"
-					app:cardCornerRadius="10dp"
-					app:cardElevation="5dp"
-					app:layout_constraintTop_toBottomOf="@id/iv_img">
 
 					<TextView
+						style="@style/Typography.Regular"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Burn"
+						android:layout_marginTop="60dp"
+						android:text="Description"
 						android:textColor="@color/white"
-						android:textSize="20sp" />
-				</androidx.cardview.widget.CardView>
-
-				<androidx.cardview.widget.CardView
-					android:id="@+id/btn_burn1"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginTop="20dp"
-					android:layout_marginBottom="20dp"
-					android:clickable="true"
-					android:focusable="true"
-					android:foreground="?android:attr/selectableItemBackground"
-					app:cardBackgroundColor="@color/red"
-					app:cardCornerRadius="10dp"
-					app:cardElevation="5dp"
-					app:layout_constraintTop_toBottomOf="@id/iv_img">
+						android:textSize="16dp"
+						tools:text="eqwweqweqe" />
 
 					<TextView
+						style="@style/Typography.Regular"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Burn"
+						android:layout_marginTop="20dp"
+						android:text="@{viewModel.selectItem.metadata.description}"
 						android:textColor="@color/white"
-						android:textSize="20sp" />
-				</androidx.cardview.widget.CardView>
+						android:textSize="16dp"
+						tools:text="eqwweqweqe" />
 
-				<androidx.cardview.widget.CardView
-					android:id="@+id/btn_burn2"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginTop="20dp"
-					android:layout_marginBottom="20dp"
-					android:clickable="true"
-					android:focusable="true"
-					android:foreground="?android:attr/selectableItemBackground"
-					app:cardBackgroundColor="@color/red"
-					app:cardCornerRadius="10dp"
-					app:cardElevation="5dp"
-					app:layout_constraintTop_toBottomOf="@id/iv_img">
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="56dp" />
+				</androidx.appcompat.widget.LinearLayoutCompat>
+			</androidx.constraintlayout.widget.ConstraintLayout>
+		</androidx.core.widget.NestedScrollView>
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Burn"
-						android:textColor="@color/white"
-						android:textSize="20sp" />
+		<TextView
+			android:id="@+id/btn_burn"
+			style="@style/Typography.Bold"
+			android:layout_width="match_parent"
+			android:layout_height="56dp"
+			android:layout_margin="20dp"
+			android:background="@drawable/bg_gradient"
+			android:gravity="center"
+			android:text="Redeem"
+			android:textColor="@color/black"
+			android:textSize="18dp"
+			app:layout_constraintBottom_toBottomOf="parent" />
 
+		<ProgressBar
+			android:id="@+id/tx_progress"
+			android:layout_width="100dp"
+			android:layout_height="100dp"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-				</androidx.cardview.widget.CardView>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
-			</androidx.appcompat.widget.LinearLayoutCompat>
-
-
-			<ProgressBar
-				android:id="@+id/tx_progress"
-				android:layout_width="100dp"
-				android:layout_height="100dp"
-				android:layout_gravity="center"
-				android:visibility="gone"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
-
-		</androidx.constraintlayout.widget.ConstraintLayout>
-
-	</androidx.core.widget.NestedScrollView>
 </layout>

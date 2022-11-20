@@ -34,11 +34,17 @@ class TransactionFragment : BaseFragment<FragmentTransactionBinding>(
     override fun initViews() {
         initCall()
         initRecyclerView()
+        binding.btnFinsh.setOnClickListener {
+            (activity as NearActivity).sendTransaction()
+            binding.txProgress.visibility = View.VISIBLE
+        }
     }
 
     fun initCall() {
         (activity as NearActivity).sendViewAccount()
         (activity as NearActivity).sendTransaction()
+        Log.e("activityViewModel.user ", activityViewModel.user)
+
         binding.txProgress.visibility = View.VISIBLE
     }
 
@@ -55,7 +61,7 @@ class TransactionFragment : BaseFragment<FragmentTransactionBinding>(
         }
     }
 
-    private fun nearGradient(str:String) {
+    private fun nearGradient(str: String) {
         val size = str.length
         binding.tvNear.apply {
             val purple = ContextCompat.getColor(context, R.color.start)
@@ -65,29 +71,37 @@ class TransactionFragment : BaseFragment<FragmentTransactionBinding>(
             text = spannable
         }
     }
+
     fun updateTxResponse0(callFunctionResponse: ViewAccountResult) {
         callFunctionResponse.result.let {
+            Log.e("result", "${callFunctionResponse}")
             val len = it.amount.length
             val near =
                 it.amount.substring(0, len - 24) + "." + it.amount.substring(len - 24, len - 22)
             val usd = (it.amount.substring(0, len - 24).toInt() * 1.73)
-            nearGradient( "$near NEAR")
+            nearGradient("$near NEAR")
             binding.tvUsd.text = "${usd} USD"
         }
         callFunctionResponse.error?.let {
-            Log.i("err",  "Error: ${it.message}")
+            Log.i("err", "Error: ${it.message}")
         }
     }
 
     fun updateTxResponse(callFunctionResponse: FunctionCallResponse) {
         binding.txProgress.visibility = View.GONE
         callFunctionResponse.result.let {
-            val functionResult = it.result!!.getListDecodedAsciiValue()
+            Log.e("callFunctionResponse", "${callFunctionResponse}")
+
+            val functionResult = it.result?.getListDecodedAsciiValue()
+            if (functionResult == null) {
+                (activity as NearActivity).sendToast()
+
+            }
             Log.i("NearService", "${functionResult?.toList()}")
             functionResult?.toList()?.let { it1 -> activityViewModel.postNft(it1) }
         }
         callFunctionResponse.error?.let {
-            Log.i("err",  "Error: ${it.message}")
+            Log.i("err", "Error: ${it.message}")
         }
     }
 

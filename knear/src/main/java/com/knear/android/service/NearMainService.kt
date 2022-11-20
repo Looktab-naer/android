@@ -11,7 +11,7 @@ import com.knear.android.scheme.KeyPairEd25519
 class NearMainService(val activity: Activity) {
 
     private var networkId = "wallet.testnet.near.org"
-    private var accountId: String = ""
+    var accountId: String = ""
     private val walletUrl = "https://wallet.testnet.near.org/login/"
     private val rcpEndpoint = "https://rpc.testnet.near.org"
     private val redirectUri = "near://success-auth"

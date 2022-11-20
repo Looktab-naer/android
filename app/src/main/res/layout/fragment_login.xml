@@ -56,7 +56,7 @@
 			android:layout_marginTop="12dp"
 			android:autofillHints="User name"
 			android:background="@drawable/box_default_line"
-			android:hint="User name ..."
+			android:hint="username.testnet"
 			android:textColorHint="@color/gray100"
 			style="@style/Typography.Regular"
 			android:textSize="16dp"

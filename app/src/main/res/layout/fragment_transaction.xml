@@ -1,97 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools">
 
-	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		android:background="@color/gray900"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">
 
+	<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/gray900"
+		android:clickable="true"
+		android:orientation="vertical">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="60dp">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/Title"
+				android:text="Near Wallet"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<ImageView
+				android:id="@+id/btn_finsh"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="12dp"
+				android:src="@drawable/ic_back"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
 
 		<androidx.appcompat.widget.LinearLayoutCompat
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:clickable="true"
-			android:orientation="vertical">
+			android:background="@color/gray900"
+			android:orientation="vertical"
+			android:padding="40dp">
 
-			<androidx.constraintlayout.widget.ConstraintLayout
-				android:layout_width="match_parent"
-				android:layout_height="60dp">
-
-				<androidx.appcompat.widget.AppCompatTextView
-					style="@style/Title"
-					android:text="Near Wallet"
-					app:layout_constraintBottom_toBottomOf="parent"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent" />
-
-				<ImageView
-					android:id="@+id/btn_finsh"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="12dp"
-					android:src="@drawable/ic_back"
-					app:layout_constraintBottom_toBottomOf="parent"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent" />
-			</androidx.constraintlayout.widget.ConstraintLayout>
-
-			<androidx.appcompat.widget.LinearLayoutCompat
-				android:layout_width="match_parent"
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tv_near"
+				style="@style/Typography.ExtraBold"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:background="@color/gray900"
-				android:padding="40dp"
-				android:orientation="vertical">
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:id="@+id/tv_near"
-					style="@style/Typography.ExtraBold"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_gravity="center"
-					android:clickable="true"
-					android:gravity="center"
-					android:text="  NEAR"
-					android:textColor="@color/white"
-					android:textSize="32dp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:id="@+id/tv_usd"
-					style="@style/Typography.Medium"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_gravity="center"
-					android:layout_marginTop="8dp"
-					android:gravity="center"
-					android:text="222usd"
-					android:textColor="#ccc"
-					android:textSize="16dp" />
-			</androidx.appcompat.widget.LinearLayoutCompat>
-
-			<View
-				android:layout_width="match_parent"
-				android:layout_height="8dp"
-				android:background="@color/black" />
-
-			<androidx.recyclerview.widget.RecyclerView
-				android:id="@+id/rv_nft"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="14dp"
-				android:layout_marginEnd="14dp"
-				app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-				app:spanCount="2"
-				tools:itemCount="10"
-				tools:listitem="@layout/item_nft" />
-
-			<ProgressBar
-				android:id="@+id/tx_progress"
-				android:layout_width="100dp"
-				android:layout_height="100dp"
 				android:layout_gravity="center"
-				android:visibility="gone" />
+				android:clickable="true"
+				android:gravity="center"
+				android:text="  NEAR"
+				android:textColor="@color/white"
+				android:textSize="32dp" />
 
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tv_usd"
+				style="@style/Typography.Medium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="8dp"
+				android:gravity="center"
+				android:text="222usd"
+				android:textColor="#ccc"
+				android:textSize="16dp" />
 		</androidx.appcompat.widget.LinearLayoutCompat>
-	</ScrollView>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="8dp"
+			android:background="@color/black" />
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rv_nft"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="14dp"
+			android:layout_marginEnd="14dp"
+			app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+			app:spanCount="2"
+			tools:itemCount="10"
+			tools:listitem="@layout/item_nft" />
+
+		<ProgressBar
+			android:id="@+id/tx_progress"
+			android:layout_width="100dp"
+			android:layout_height="100dp"
+			android:layout_gravity="center"
+			android:visibility="gone" />
+
+	</androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

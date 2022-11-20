@@ -11,6 +11,7 @@ class NearViewModel : BaseViewModel() {
     val selectItem = MutableLiveData<NftResponse>()
 
     var selectTokenId = ""
+    var user = ""
     fun postNft(a: List<NftResponse>) {
         _nftList.value = a
     }

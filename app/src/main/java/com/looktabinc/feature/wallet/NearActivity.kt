@@ -3,8 +3,8 @@ package com.looktabinc.feature.wallet
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.knear.android.service.MethodUtils.Companion.getDecodedAsciiValue
 import com.knear.android.service.NearMainService
 import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
@@ -39,6 +39,7 @@ class NearActivity : BaseActivity<ActivityNearBinding>(R.layout.activity_near) {
 
 
     fun login(email: String) {
+        viewModel.user = email
         nearMainService.login(email)
     }
 
@@ -63,7 +64,6 @@ class NearActivity : BaseActivity<ActivityNearBinding>(R.layout.activity_near) {
     fun sendViewAccount() {
         CoroutineScope(Dispatchers.IO).launch {
             val balanceOfResponse = nearMainService.viewAccount()
-
             withContext(Dispatchers.Main) {
                 transactionFragment.updateTxResponse0(balanceOfResponse)
             }
@@ -71,10 +71,11 @@ class NearActivity : BaseActivity<ActivityNearBinding>(R.layout.activity_near) {
     }
 
     fun sendTransaction() {
-        val contractName = "testm6.testnet"
-        val methodName = "nft_tokens_for_owner"
-        val balanceOfArgs = "{\"account_id\":\"yuchoco.testnet\"}"
 
+        val contractName = "testm7.testnet"
+        val methodName = "nft_tokens_for_owner"
+        val balanceOfArgs = "{\"account_id\":\"${nearMainService.accountId}\"}"
+        Log.e("account_i ", balanceOfArgs)
         CoroutineScope(Dispatchers.IO).launch {
             val transaction =
                 nearMainService.callViewFunction(contractName, methodName, balanceOfArgs)
@@ -84,12 +85,10 @@ class NearActivity : BaseActivity<ActivityNearBinding>(R.layout.activity_near) {
         }
     }
 
-    //near call —accountId csummer.testnet testm5.testnet nft_burn '{"token_id":"15:2"}'
     fun sendBurn(token_id: String) {
-        val contractName = "testm6.testnet"
+        val contractName = "testm7.testnet"
         val methodName = "nft_burn"
         val balanceOfArgs = "{ \"token_id\": \"${token_id}\" }"
-
         Log.e("12321", balanceOfArgs)
         CoroutineScope(Dispatchers.IO).launch {
             val transaction =
@@ -100,36 +99,9 @@ class NearActivity : BaseActivity<ActivityNearBinding>(R.layout.activity_near) {
         }
     }
 
-    fun sendBurn1(token_id: String) {
-        val contractName = "testm6.testnet"
-        val methodName = "nft_burn"
-        val balanceOfArgs = "{\"args\": { \"token_id\": \"${token_id}\"},\"amount\": \"1\",}"
-        Log.e("22222  ", balanceOfArgs)
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val transaction =
-                nearMainService.callViewFunctionTransaction(contractName, methodName, balanceOfArgs)
-            withContext(Dispatchers.Main) {
-                detailFragment.updateTxResponse(transaction)
-            }
-        }
+    fun sendToast() {
+        Toast.makeText(this, "Failed to load NFT information", Toast.LENGTH_SHORT).show();
     }
-
-    fun sendBurn2(token_id: String) {
-        val contractName = "testm6.testnet"
-        val methodName = "nft_burn"
-        val balanceOfArgs = "{\"args\": { \"token_id\": \"${token_id}\"},}"
-        Log.e("333  ", balanceOfArgs)
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val transaction =
-                nearMainService.callViewFunctionTransaction(contractName, methodName, balanceOfArgs)
-            withContext(Dispatchers.Main) {
-                detailFragment.updateTxResponse(transaction)
-            }
-        }
-    }
-
 
     companion object {
         fun intent(context: Context): Intent {
