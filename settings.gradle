@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Looktab"
 include ':app'
+include ':knear'
