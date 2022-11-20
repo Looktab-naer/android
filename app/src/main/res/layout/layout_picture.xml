@@ -36,10 +36,13 @@
 				app:layout_constraintTop_toTopOf="@id/iv_item_shop" />
 
 			<androidx.appcompat.widget.AppCompatTextView
-				style="@style/JoinStyleText"
+				style="@style/Typography.Regular"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:textColor="@color/gray100"
 				android:layout_width="match_parent"
 				android:text="@string/shop"
-				android:textColor="@color/gray600"
+				android:textSize="16dp"
 				app:layout_constraintTop_toBottomOf="@id/iv_item_shop" />
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -70,10 +73,13 @@
 				app:layout_constraintTop_toTopOf="@id/iv_item_food" />
 
 			<androidx.appcompat.widget.AppCompatTextView
-				style="@style/JoinStyleText"
+				style="@style/Typography.Regular"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:textColor="@color/gray100"
 				android:layout_width="match_parent"
 				android:text="@string/food"
-				android:textColor="@color/gray600"
+				android:textSize="16dp"
 				app:layout_constraintTop_toBottomOf="@id/iv_item_food" />
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -103,10 +109,13 @@
 				app:layout_constraintTop_toTopOf="@id/iv_item_selfy" />
 
 			<androidx.appcompat.widget.AppCompatTextView
-				style="@style/JoinStyleText"
+				style="@style/Typography.Regular"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:textColor="@color/gray100"
 				android:layout_width="match_parent"
 				android:text="@string/selfy"
-				android:textColor="@color/gray600"
+				android:textSize="16dp"
 				app:layout_constraintTop_toBottomOf="@id/iv_item_selfy" />
 		</androidx.constraintlayout.widget.ConstraintLayout>
 	</androidx.appcompat.widget.LinearLayoutCompat>
