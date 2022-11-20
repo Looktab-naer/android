@@ -9,7 +9,7 @@
 	<string name="restaurant">RESTAURANT</string>
 	<string name="bar">BAR</string>
 	<string name="shopping">SHOPPING</string>
-	<string name="cultural_life">CULTURAL LIFE</string>
+	<string name="cultural_life">LIFE</string>
 	<string name="fitness">FITNESS</string>
 	<string name="shop">Shop</string>
 	<string name="food">Food</string>
@@ -22,4 +22,5 @@
 	<string name="review">REVIEW</string>
 	<string name="save">Save</string>
 	<string name="find_a_place_naround_me_now">Find a place\naround me now!</string>
+	<string name="home">home</string>
 </resources>
