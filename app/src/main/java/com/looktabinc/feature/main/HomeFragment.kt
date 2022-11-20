@@ -6,10 +6,12 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.looktabinc.Config.Base_URL
 import com.looktabinc.DesignUtil
 import com.looktabinc.R
 import com.looktabinc.base.BaseFragment
 import com.looktabinc.databinding.FragmentHomeBinding
+import com.looktabinc.feature.ar.ArActivity
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
     R.layout.fragment_home

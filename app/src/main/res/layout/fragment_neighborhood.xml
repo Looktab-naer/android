@@ -63,6 +63,7 @@
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
 			android:padding="12dp"
+			android:background="#99000000"
 			app:layout_constraintBottom_toBottomOf="parent">
 
 			<TextView

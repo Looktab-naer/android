@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.looktabinc.Config
 import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
 import com.looktabinc.data.injection.KakaoInjection
@@ -11,7 +12,7 @@ import com.looktabinc.databinding.ActivityMainBinding
 import com.looktabinc.feature.ar.ArActivity
 import com.looktabinc.feature.checkin.CheckinFragment
 import com.looktabinc.feature.checkin.ReviewWriteFragment
-import com.looktabinc.feature.main.MainViewModel.*
+import com.looktabinc.feature.main.MainViewModel.ViewFlow
 import com.looktabinc.feature.mypage.AirDropSettingFragment
 import com.looktabinc.feature.mypage.MyPageFragment
 import com.looktabinc.feature.mypage.ReviewHistoryFragment
@@ -70,8 +71,31 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                 }
                 ViewFlow.AR->{
                     ArActivity.start(this)
+                    ArActivity.start(this, Config.Base_URL +"?type=")
                 }
                 else -> {}
+            }
+        })
+        viewModel.arFlow.observe(this, Observer {
+            when(it.type) {
+                Config.ArType.CAFE.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
+                Config.ArType.RESTAURANT.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
+                Config.ArType.BAR.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
+                Config.ArType.SHOPPING.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
+                Config.ArType.LIFE.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
+                Config.ArType.FITNESS.type -> {
+                    ArActivity.start(this, Config.Base_URL + "?type="+it.type)
+                }
             }
         })
     }

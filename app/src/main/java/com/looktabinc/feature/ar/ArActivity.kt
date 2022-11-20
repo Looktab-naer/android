@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import com.looktabinc.Config
 import com.looktabinc.LocationProvider
 import com.looktabinc.R
 import com.looktabinc.base.BaseActivity
@@ -25,14 +26,15 @@ import java.io.IOException
 
 class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
 
-    val KEY =
-        "vxU3jqQ8yxZstSyEmy1f3aXkQwUBK91BHHuJWuCmgZRiXnDrXASxs0R43mSgj7Vvp0SxBtVvzTNPzSWBJuZhJKwhbYUyDa/PGvcmNOnqdQAZgsp1t2DfcPTzGUlZQ8SbfBrCHDN/Dfi4Sut803fPDalnakr2u4ofGabxLEa6dgdTYWx0ZWRfXwTNnZbzVu325DDh1NetPifL8b5IuSIWFd6ht45p9ss5tgQv5/A5ucH0LhimRrMX4XlF0fNrF3RX71GF5hALz8uQ/3No/ZO0tR9sn5UMN+wu463YAlp74hvvqfKJgdPKRliedMzFhKpne4AetUzYJeg7PlRM4zFtyjGRj0nxHOW+i8v+bK+tADSAP0tZX6FP1/Lx+sWOVa4w46BIC/Zo7qoEp9Xcuceqy36K8A6T2l25rWCGnwuQEPLdFZL7PtwCCkpO9MHiZJMMyspBFqDQA4JXYY3Bk9W1naMpFwVEnl23bXG9+X+bixEdwetxSZjmzIGh4D/hROANxqGNheo7hbAVxoQpUwrQM0Pkpf4TcglgtIdrPnaQjytkvFEru67UwxH3alR4sn53B6g2rPUkeHyZn+g8heOQlFOP7FhxJYU6EI9sMAi7jNfJL/kWBE1PANC3V+7WvXEvZzlY/HHGXXli5zSk+P9kH3c2hxygtQk+Ep/Jiat9Q2Qfrxh2mBv7oySJS/zcXAZbSOveanSIDPzva24d6RdbCYcHAEcOSL1uYNK5HE41k+XMZEocNWOT0IPP1wWb9pNKSbsm0S7C/1siU9fp/BFdyJjEIw1vPjy5HyjcAO4pvsj6kSlBmDdsjJWtDgY3nNaELMqroXI5ITmBwkJkbMRs6kzQtnvq4QVJgphtkGFhalc="
-    val url = "https://stately-puffpuff-8836be.netlify.app/all.html"
+    val KEY = "vxU3jqQ8yxZstSyEmy1f3aXkQwUBK91BHHuJWuCmgZRiXnDrXASxs0R43mSgj7Vvp0SxBtVvzTNPzSWBJuZhJKwhbYUyDa/PGvcmNOnqdQAZgsp1t2DfcPTzGUlZQ8SbfBrCHDN/Dfi4Sut803fPDalnakr2u4ofGabxLEa6dgdTYWx0ZWRfXwTNnZbzVu325DDh1NetPifL8b5IuSIWFd6ht45p9ss5tgQv5/A5ucH0LhimRrMX4XlF0fNrF3RX71GF5hALz8uQ/3No/ZO0tR9sn5UMN+wu463YAlp74hvvqfKJgdPKRliedMzFhKpne4AetUzYJeg7PlRM4zFtyjGRj0nxHOW+i8v+bK+tADSAP0tZX6FP1/Lx+sWOVa4w46BIC/Zo7qoEp9Xcuceqy36K8A6T2l25rWCGnwuQEPLdFZL7PtwCCkpO9MHiZJMMyspBFqDQA4JXYY3Bk9W1naMpFwVEnl23bXG9+X+bixEdwetxSZjmzIGh4D/hROANxqGNheo7hbAVxoQpUwrQM0Pkpf4TcglgtIdrPnaQjytkvFEru67UwxH3alR4sn53B6g2rPUkeHyZn+g8heOQlFOP7FhxJYU6EI9sMAi7jNfJL/kWBE1PANC3V+7WvXEvZzlY/HHGXXli5zSk+P9kH3c2hxygtQk+Ep/Jiat9Q2Qfrxh2mBv7oySJS/zcXAZbSOveanSIDPzva24d6RdbCYcHAEcOSL1uYNK5HE41k+XMZEocNWOT0IPP1wWb9pNKSbsm0S7C/1siU9fp/BFdyJjEIw1vPjy5HyjcAO4pvsj6kSlBmDdsjJWtDgY3nNaELMqroXI5ITmBwkJkbMRs6kzQtnvq4QVJgphtkGFhalc="
+    private val url by lazy {
+        intent?.getStringExtra(Config.LOAD_URL) ?: Config.Base_URL
+    }
 
     private var locationProvider: LocationProvider? = null
     override fun initViews() {
         checkPermission()
-
+        Log.e("url",url)
         val config = ArchitectStartupConfiguration()
         config.licenseKey = KEY
         binding.architectView.onCreate(config)
@@ -259,6 +261,13 @@ class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
 
         fun start(context: Context?, action: Intent.() -> Unit = {}) {
             val intent = Intent(context, ArActivity::class.java).apply(action)
+            context?.startActivity(intent)
+        }
+
+
+        fun start(context: Context?, loadUrl: String, action: Intent.() -> Unit = {}) {
+            val intent = Intent(context, ArActivity::class.java).apply(action)
+            intent.putExtra(Config.LOAD_URL, loadUrl)
             context?.startActivity(intent)
         }
     }

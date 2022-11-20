@@ -2,6 +2,7 @@ package com.looktabinc.feature.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.looktabinc.Config
 import com.looktabinc.base.BaseViewModel
 import com.looktabinc.base.Event
 import com.looktabinc.data.source.KaKaoSource
@@ -43,6 +44,11 @@ class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel(
         _flow.value = state
     }
 
+    private val _arFlow = MutableLiveData<Config.ArType>()
+    val arFlow: LiveData<Config.ArType> = _arFlow
+    fun setArwFlow(state: Config.ArType) {
+        _arFlow.value = state
+    }
 
     private val _historyList = MutableLiveData<List<ReviewHistory>>()
     val historyList: LiveData<List<ReviewHistory>> = _historyList

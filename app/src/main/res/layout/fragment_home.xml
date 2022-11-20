@@ -11,6 +11,8 @@
 
 		<import type="com.looktabinc.feature.main.MainViewModel.ViewFlow" />
 
+		<import type="com.looktabinc.Config.ArType" />
+
 	</data>
 
 	<androidx.core.widget.NestedScrollView
@@ -132,6 +134,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.CAFE)}"
 						android:orientation="vertical"
 						android:padding="12dp">
 
@@ -159,6 +162,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.RESTAURANT)}"
 						android:orientation="vertical"
 						android:padding="12dp">
 
@@ -186,6 +190,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.BAR)}"
 						android:orientation="vertical"
 						android:padding="12dp">
 
@@ -222,6 +227,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.SHOPPING)}"
 						android:orientation="vertical"
 						android:padding="12dp">
 
@@ -249,6 +255,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.LIFE)}"
 						android:orientation="vertical"
 						android:paddingTop="12dp"
 						android:paddingBottom="12dp">
@@ -277,6 +284,7 @@
 						android:layout_margin="4dp"
 						android:layout_weight="1"
 						android:background="@color/card"
+						android:onClick="@{() -> viewModel.setArwFlow(ArType.FITNESS)}"
 						android:orientation="vertical"
 						android:padding="12dp">
 
@@ -313,9 +321,9 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="20dp"
-				tools:itemCount="10"
 				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-				tools:listitem="@layout/item_neighborhood"/>
+				tools:itemCount="10"
+				tools:listitem="@layout/item_neighborhood" />
 		</androidx.appcompat.widget.LinearLayoutCompat>
 	</androidx.core.widget.NestedScrollView>
 
