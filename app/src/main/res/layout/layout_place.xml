@@ -24,7 +24,9 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
+					android:padding="2dp"
+					android:scaleType="centerCrop"
+
 					android:src="@drawable/img_cafe"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,8 +40,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/cafe"
 				android:textColor="@color/gray100"
@@ -63,7 +65,9 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
+					android:padding="2dp"
+					android:scaleType="centerCrop"
+
 
 					android:src="@drawable/img_restaurant"
 					app:layout_constraintTop_toTopOf="parent" />
@@ -78,8 +82,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/restaurant"
 				android:textColor="@color/gray100"
@@ -103,8 +107,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
-
+					android:padding="2dp"
+					android:scaleType="centerCrop"
 					android:src="@drawable/img_bar"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,8 +122,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/bar"
 				android:textColor="@color/gray100"
@@ -147,8 +151,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
-
+					android:padding="2dp"
+					android:scaleType="centerCrop"
 					android:src="@drawable/img_shopping"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,8 +166,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/shopping"
 				android:textColor="@color/gray100"
@@ -187,7 +191,9 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
+					android:padding="2dp"
+					android:scaleType="centerCrop"
+
 
 					android:src="@drawable/img_cultural_life"
 					app:layout_constraintTop_toTopOf="parent" />
@@ -202,8 +208,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/cultural_life"
 				android:textColor="@color/gray100"
@@ -227,8 +233,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:adjustViewBounds="true"
-					android:padding="3dp"
-
+					android:padding="2dp"
+					android:scaleType="centerCrop"
 					android:src="@drawable/img_fitness"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -242,8 +248,8 @@
 
 			<androidx.appcompat.widget.AppCompatTextView
 				style="@style/Typography.Regular"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="@string/fitness"
 				android:textColor="@color/gray100"

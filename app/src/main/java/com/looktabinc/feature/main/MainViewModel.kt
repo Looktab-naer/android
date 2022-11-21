@@ -55,6 +55,14 @@ class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel(
 
     fun getHistory() {
         _historyList.value = listOf(
+            ReviewHistory(
+                id = 4,
+                image = listOf(),
+                category = "RESTAURANT",
+                storeName = "Mokro",
+                content = "test review",
+                date = "2022.11.20"
+            ),
            ReviewHistory(
                id = 1,
                image = listOf(
@@ -90,28 +98,28 @@ class MainViewModel (private val reviewDataSource: KaKaoSource) : BaseViewModel(
         _checkinList.value = listOf(
             Checkin(
                 id = 1,
-                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-1.jpg",
+                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-4.jpg",
                 category = "CAFE",
                 storeName = "Overflow",
                 date = "2022.11.03"
             ),
             Checkin(
                 id = 2,
-                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-2.jpg",
+                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-3.jpg",
                 category = "LAMM",
                 storeName = "BAR",
                 date = "2022.09.13"
             ),
             Checkin(
                 id = 3,
-                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-3.jpg",
+                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-2.jpg",
                 category = "FITNESS",
                 storeName = "MMT FITNESS",
                 date = "2022.08.11"
             ),
             Checkin(
                 id = 4,
-                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-4.jpg",
+                image = "https://raw.githubusercontent.com/Looktab-naer/imgs/main/c-1.jpg",
                 category = "RESTAURANT",
                 storeName = "Mokro",
                 date = "2022.08.03"

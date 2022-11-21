@@ -23,6 +23,9 @@ class ReviewWriteFragment : BaseFragment<FragmentReviewWriteBinding>(
 
     override fun initViews() {
         binding.viewModel = activityViewModel
+        binding.btnSave.setOnClickListener {
+            closeFragment()
+        }
     }
 
     override fun initObserves() {

@@ -8,8 +8,10 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
 import android.provider.Settings
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -22,13 +24,14 @@ import com.looktabinc.base.BaseActivity
 import com.looktabinc.databinding.ActivityArBinding
 import com.wikitude.architect.ArchitectStartupConfiguration
 import java.io.IOException
+import java.util.*
 
 
 class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
 
     val KEY = "vxU3jqQ8yxZstSyEmy1f3aXkQwUBK91BHHuJWuCmgZRiXnDrXASxs0R43mSgj7Vvp0SxBtVvzTNPzSWBJuZhJKwhbYUyDa/PGvcmNOnqdQAZgsp1t2DfcPTzGUlZQ8SbfBrCHDN/Dfi4Sut803fPDalnakr2u4ofGabxLEa6dgdTYWx0ZWRfXwTNnZbzVu325DDh1NetPifL8b5IuSIWFd6ht45p9ss5tgQv5/A5ucH0LhimRrMX4XlF0fNrF3RX71GF5hALz8uQ/3No/ZO0tR9sn5UMN+wu463YAlp74hvvqfKJgdPKRliedMzFhKpne4AetUzYJeg7PlRM4zFtyjGRj0nxHOW+i8v+bK+tADSAP0tZX6FP1/Lx+sWOVa4w46BIC/Zo7qoEp9Xcuceqy36K8A6T2l25rWCGnwuQEPLdFZL7PtwCCkpO9MHiZJMMyspBFqDQA4JXYY3Bk9W1naMpFwVEnl23bXG9+X+bixEdwetxSZjmzIGh4D/hROANxqGNheo7hbAVxoQpUwrQM0Pkpf4TcglgtIdrPnaQjytkvFEru67UwxH3alR4sn53B6g2rPUkeHyZn+g8heOQlFOP7FhxJYU6EI9sMAi7jNfJL/kWBE1PANC3V+7WvXEvZzlY/HHGXXli5zSk+P9kH3c2hxygtQk+Ep/Jiat9Q2Qfrxh2mBv7oySJS/zcXAZbSOveanSIDPzva24d6RdbCYcHAEcOSL1uYNK5HE41k+XMZEocNWOT0IPP1wWb9pNKSbsm0S7C/1siU9fp/BFdyJjEIw1vPjy5HyjcAO4pvsj6kSlBmDdsjJWtDgY3nNaELMqroXI5ITmBwkJkbMRs6kzQtnvq4QVJgphtkGFhalc="
     private val url by lazy {
-        intent?.getStringExtra(Config.LOAD_URL) ?: Config.Base_URL+ "?type="+Config.ArType.ALL.type
+        intent?.getStringExtra(Config.LOAD_URL) ?: (Config.Base_URL+ "?type=ALL")
     }
 
     private var locationProvider: LocationProvider? = null
@@ -42,7 +45,7 @@ class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
         binding.architectView.let {
             locationProvider = LocationProvider(this, object : LocationListener {
                 override fun onLocationChanged(location: Location) {
-                    if (location.hasAltitude() && location.hasAccuracy() && location.accuracy < 7) {
+                    if (location.hasAltitude() && location.hasAccuracy() && location.accuracy <16) {
                         it.setLocation(
                             location.latitude,
                             location.longitude,
@@ -67,7 +70,6 @@ class ArActivity : BaseActivity<ActivityArBinding>(R.layout.activity_ar) {
         }
 
     }
-
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         binding.architectView.onPostCreate()

@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.138" />
         <entry key="app/src/main/res/drawable/ic_next.xml" value="0.138" />
         <entry key="app/src/main/res/layout/Item_nft.xml" value="0.18125" />
-        <entry key="app/src/main/res/layout/activity_ar.xml" value="0.1118659420289855" />
+        <entry key="app/src/main/res/layout/activity_ar.xml" value="0.1918238993710692" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_mypage.xml" value="0.10876132930513595" />
         <entry key="app/src/main/res/layout/activity_near.xml" value="0.12234042553191489" />
@@ -36,7 +36,7 @@
         <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.29301745635910226" />
         <entry key="app/src/main/res/layout/fragment_checkin.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.1578125" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14539347408829176" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22511144130757801" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_mycheckin.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1" />
