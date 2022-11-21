@@ -6,6 +6,6 @@ object Config {
 
     enum class ArType(val type: String)
     { CAFE("CAFE"), RESTAURANT("RESTAURANT"), BAR("BAR"), SHOPPING("SHOPPING")
-    , LIFE("life"), FITNESS("FITNESS") }
+    , LIFE("life"), FITNESS("FITNESS"), ALL("ALL") }
 
 }
