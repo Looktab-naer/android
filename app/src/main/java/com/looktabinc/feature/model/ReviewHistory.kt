@@ -7,4 +7,12 @@ data class ReviewHistory(
     val storeName:String,
     val content:String,
     val date:String
-)
+){
+    fun getImageN(int:Int): String? {
+        if (image.size < int){
+            return null
+        } else{
+            return image[int-1]
+        }
+    }
+}

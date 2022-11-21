@@ -5,7 +5,7 @@ object Config {
     const val Base_URL =  "https://stately-puffpuff-8836be.netlify.app/all.html"
 
     enum class ArType(val type: String)
-    { CAFE("cafe"), RESTAURANT("restaurant"), BAR("bar"), SHOPPING("shopping")
-    , LIFE("life"), FITNESS("fitness") }
+    { CAFE("CAFE"), RESTAURANT("RESTAURANT"), BAR("BAR"), SHOPPING("SHOPPING")
+    , LIFE("life"), FITNESS("FITNESS") }
 
 }

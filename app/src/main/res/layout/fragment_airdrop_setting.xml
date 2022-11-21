@@ -226,9 +226,10 @@
 				android:layout_width="match_parent"
 				android:layout_height="56dp"
 				android:layout_margin="20dp"
-				android:background="@drawable/btn_active"
+				android:background="@drawable/bg_gradient"
 				android:gravity="center"
 				android:text="Save"
+				android:onClick="@{() -> viewModel.onClickAirDropFragmentEvent(viewModel.close)}"
 				android:textColor="@color/black"
 				android:textSize="18dp" />
 		</androidx.appcompat.widget.LinearLayoutCompat>

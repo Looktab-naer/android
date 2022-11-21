@@ -19,6 +19,7 @@ class CheckinFragment : BaseFragment<FragmentCheckinBinding>(
         CheckinAdapter().apply {
             setOnItemClickListener(object : CheckinAdapter.OnItemClickListener {
                 override fun onItemClick(id: Int) {
+                    activityViewModel.selectCheckIn(id)
                     activityViewModel.setViewFlow(MainViewModel.ViewFlow.REVIEW_WRITE)
                 }
             })

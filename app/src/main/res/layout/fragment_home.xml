@@ -152,7 +152,7 @@
 							android:gravity="center"
 							android:text="@string/cafe"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 					<androidx.appcompat.widget.LinearLayoutCompat
@@ -180,7 +180,7 @@
 							android:gravity="center"
 							android:text="@string/restaurant"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 					<androidx.appcompat.widget.LinearLayoutCompat
@@ -208,7 +208,7 @@
 							android:gravity="center"
 							android:text="@string/bar"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -245,7 +245,7 @@
 							android:gravity="center"
 							android:text="@string/shopping"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 					<androidx.appcompat.widget.LinearLayoutCompat
@@ -274,7 +274,7 @@
 							android:gravity="center"
 							android:text="@string/cultural_life"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 					<androidx.appcompat.widget.LinearLayoutCompat
@@ -302,7 +302,7 @@
 							android:gravity="center"
 							android:text="@string/fitness"
 							android:textColor="@color/white"
-							android:textSize="12dp" />
+							android:textSize="11dp" />
 					</androidx.appcompat.widget.LinearLayoutCompat>
 
 

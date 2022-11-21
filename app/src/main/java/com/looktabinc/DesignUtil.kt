@@ -3,6 +3,7 @@ package com.looktabinc
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.opengl.Visibility
 import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
@@ -24,6 +25,24 @@ object DesignUtil {
         }
     }
 
+  @JvmStatic
+    @BindingAdapter("imageUrlVisible")
+    fun ImageView.setImageUrlVisible(url: String?) {
+      if (url==null){
+          visibility =  View.GONE
+      }
+      else{
+          View.VISIBLE
+          url?.let {
+              Glide.with(context)
+                  .load(it)
+                  .thumbnail(0.1f)
+                  .placeholder(ColorDrawable(Color.parseColor("#DEE2E6")))
+                  .into(this)
+          }
+      }
+
+    }
 
     @JvmStatic
     @BindingAdapter("imageCircleUrl")

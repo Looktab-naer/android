@@ -9,7 +9,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 ) {
 
     override fun initViews() {
-
         binding.btnLogin.setOnClickListener {
 //            (activity as NearActivity).login("yuchoco.testnet")
             val email = binding.userEmailEt.text.toString()
@@ -17,7 +16,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                 (activity as NearActivity).login(email)
             }
         }
-
+        binding.btnFinsh.setOnClickListener {
+            (activity as NearActivity).finish()
+        }
     }
 
     companion object {

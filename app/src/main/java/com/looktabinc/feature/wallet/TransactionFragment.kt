@@ -35,8 +35,7 @@ class TransactionFragment : BaseFragment<FragmentTransactionBinding>(
         initCall()
         initRecyclerView()
         binding.btnFinsh.setOnClickListener {
-            (activity as NearActivity).sendTransaction()
-            binding.txProgress.visibility = View.VISIBLE
+            closeFragment()
         }
     }
 
@@ -115,6 +114,13 @@ class TransactionFragment : BaseFragment<FragmentTransactionBinding>(
         return Gson().fromJson(stringValue, Array<NftResponse>::class.java)
     }
 
+    private fun closeFragment() {
+        val fragmentManager = activity?.supportFragmentManager
+        fragmentManager?.let {
+            it.beginTransaction().remove(this@TransactionFragment).commit()
+            it.popBackStack()
+        }
+    }
 
     companion object {
         fun newInstance() = TransactionFragment()

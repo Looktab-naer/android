@@ -33,12 +33,14 @@
         <entry key="app/src/main/res/layout/activity_near.xml" value="0.12234042553191489" />
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/activity_webview.xml" value="0.17248566961959355" />
-        <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.29642857142857143" />
+        <entry key="app/src/main/res/layout/fragment_airdrop_setting.xml" value="0.29301745635910226" />
         <entry key="app/src/main/res/layout/fragment_checkin.xml" value="0.14739583333333334" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15789473684210525" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.11684782608695653" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.1578125" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14539347408829176" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_mycheckin.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_neighborhood.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/fragment_review_history.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_review_write.xml" value="0.29636077880859385" />
         <entry key="app/src/main/res/layout/fragment_transaction.xml" value="0.12234042553191489" />
@@ -46,7 +48,7 @@
         <entry key="app/src/main/res/layout/item_neighborhood.xml" value="0.1082427536231884" />
         <entry key="app/src/main/res/layout/item_neighborhood_big.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/item_nft.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_review.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_review.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_picture.xml" value="0.14488348530901723" />
         <entry key="app/src/main/res/layout/layout_place.xml" value="0.2" />
       </map>

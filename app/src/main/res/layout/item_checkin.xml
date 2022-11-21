@@ -18,6 +18,7 @@
 		android:padding="20dp">
 
 		<ImageView
+			imageUrl="@{item.image}"
 			android:id="@+id/iv_store"
 			android:layout_width="80dp"
 			android:layout_height="80dp"

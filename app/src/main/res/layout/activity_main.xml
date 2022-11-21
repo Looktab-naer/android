@@ -56,7 +56,7 @@
 				android:layout_gravity="center"
 				style="@style/Typography.Regular"
 				android:layout_weight="1"
-				android:drawableTop="@drawable/btn_mypage"
+				android:drawableTop="@drawable/btn_home"
 				android:gravity="center"
 				android:onClick="@{() ->viewModel.setViewFlow(ViewFlow.HOME)}"
 				android:text="@string/home"
