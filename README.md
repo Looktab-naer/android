@@ -9,7 +9,7 @@
 - Users can get additional incentives when they contribute to LOOKTAP ecosystem by reviewing some stores and adding useful information.
 <img src="./imgs/app_near.png" alt="app_ar" style="zoom:80%;" />
 
-### 하이퍼 로컬 AR 서비스
+### Hyper Local AR Service
 
 - Users can easily access the reviews posted by their neighbors.
 
